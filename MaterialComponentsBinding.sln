@@ -1,0 +1,59 @@
+
+Microsoft Visual Studio Solution File, Format Version 15.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC-Sample", "samples\MDC-Sample\MDC-Sample.csproj", "{94E6D472-F075-4255-87F8-803A5225C23B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C985C97F-C537-4AA6-A825-A4D51C3242B5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		AUTHORS = AUTHORS
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialComponents", "src\MaterialComponents\MaterialComponents.csproj", "{F888B10B-1D2E-44F5-AAE9-3335566E67A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|Any CPU.Build.0 = Release|iPhone
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|iPhone.Build.0 = Release|iPhone
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{94E6D472-F075-4255-87F8-803A5225C23B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|iPhone.Build.0 = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhone.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$2.Text = @\nCopyright (c) ${Year} The ${CopyrightHolder} Authors.\nAll Rights Reserved.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n
+		$0.VersionControlPolicy = $3
+		description = @This Xamarin Binding Solution follows the Material Components for iOS and other projects versioning convention.\ne.g.:\n* Material Components for iOS 31.0.0 --> Xamarin Bindig 31.0.0\n* MDFTextAccessibility --> uses the latest.
+		version = 31.0.0
+	EndGlobalSection
+EndGlobal

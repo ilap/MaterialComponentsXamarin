@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F888B10B-1D2E-44F5-AAE9-3335566E67A7}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MaterialComponents</RootNamespace>
+    <AssemblyName>MaterialComponents</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>31.0.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile></DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>CS0108;CS0114;MSB9004</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="MaterialActivityIndicator.cs" />
+    <ObjcBindingApiDefinition Include="MaterialAnimationTiming.cs" />
+    <ObjcBindingApiDefinition Include="MaterialAppBar.cs" />
+    <ObjcBindingApiDefinition Include="MaterialBottomSheet.cs" />
+    <ObjcBindingApiDefinition Include="MaterialCollectionLayoutAttributes.cs" />
+    <ObjcBindingApiDefinition Include="MaterialCollections.cs" />
+    <ObjcBindingApiDefinition Include="MaterialFeatureHighlight.cs" />
+    <ObjcBindingApiDefinition Include="MaterialFlexibleHeader.cs" />
+    <ObjcBindingApiDefinition Include="MaterialHeaderStackView.cs" />
+    <ObjcBindingApiDefinition Include="MaterialInk.cs" />
+    <ObjcBindingApiDefinition Include="MaterialShadowElevations.cs" />
+    <ObjcBindingApiDefinition Include="MaterialTypography.cs" />
+    <ObjcBindingApiDefinition Include="MaterialThemes.cs" />
+    <ObjcBindingApiDefinition Include="MaterialTabs.cs" />
+    <ObjcBindingApiDefinition Include="MaterialShadowLayer.cs" />
+    <ObjcBindingApiDefinition Include="MaterialProgressView.cs" />
+    <ObjcBindingApiDefinition Include="MaterialPalettes.cs" />
+    <ObjcBindingApiDefinition Include="MaterialSlider.cs" />
+    <ObjcBindingApiDefinition Include="MaterialNavigationBar.cs" />
+    <ObjcBindingApiDefinition Include="MaterialOverlayWindow.cs" />
+    <ObjcBindingApiDefinition Include="MaterialPageControl.cs" />
+    <ObjcBindingApiDefinition Include="MaterialDialogs.cs" />
+    <ObjcBindingApiDefinition Include="MaterialSnackbar.cs" />
+    <ObjcBindingApiDefinition Include="MaterialTextFields.cs" />
+    <ObjcBindingApiDefinition Include="MaterialButtons.cs" />
+    <ObjcBindingApiDefinition Include="MaterialMaskedTransition.cs" />
+    <ObjcBindingApiDefinition Include="MotionTransitioning.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\..\references\MotionTransitioning.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\..\references\MotionAnimator.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\..\references\MotionInterchange.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\..\references\MDFTextAccessibility.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\..\references\MaterialComponents.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>
