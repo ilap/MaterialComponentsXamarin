@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Xamarin.iOS.MaterialComponents</id>
+    <version>31.0.0</version>
+    <title>Xamarin.iOS.MaterialComponents</title>
+    <authors>ilap</authors>
+    <licenseUrl>https://github.com/ilap/MaterialComponentsXamarin/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ilap/MaterialComponentsXamarin</projectUrl>
+    <iconUrl>https://github.com/ilap/MaterialComponentsXamarin/blob/master/arts/MDC.png?raw=true</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin.iOS bindigs for Material Components for iOS (MDC-iOS).</description>    
+    <copyright>Copyright (c) 2017-Present Pal Dorogi "ilap"</copyright>
+    <tags>xamarin, MaterialComponents, ilap</tags>
+    <dependencies>
+      <group targetFramework="Xamarin.iOS10">
+        <dependency id="Xamarin.iOS" version="0.0.0" />
+        <dependency id="System" version="2.0.5.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="../src/MaterialComponents/bin/Release/MaterialComponents.dll" target="lib/Xamarin.iOS10/Xamarin.iOS.MaterialComponents.dll" />
+  </files>
+</package>
