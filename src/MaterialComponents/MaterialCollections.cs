@@ -375,61 +375,61 @@ namespace MaterialComponents.MaterialCollections
 	{
 		// @optional -(CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView cellHeightAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:cellHeightAtIndexPath:")]
-		nfloat CollectionViewCellHeightAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		nfloat CellHeightAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(MDCCollectionViewCellStyle)collectionView:(UICollectionView * _Nonnull)collectionView cellStyleForSection:(NSInteger)section;
 		[Export("collectionView:cellStyleForSection:")]
-		MDCCollectionViewCellStyle CollectionViewCellStyleForSection(UICollectionView collectionView, nint section);
+		MDCCollectionViewCellStyle CellStyleForSection(UICollectionView collectionView, nint section);
 
 		// @optional -(UIColor * _Nullable)collectionView:(UICollectionView * _Nonnull)collectionView cellBackgroundColorAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:cellBackgroundColorAtIndexPath:")]
 		[return: NullAllowed]
-		UIColor CollectionViewCellBackgroundColorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		UIColor CellBackgroundColorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideItemBackgroundAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:shouldHideItemBackgroundAtIndexPath:")]
-		bool CollectionViewShouldHideItemBackgroundAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool ShouldHideItemBackgroundAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideHeaderBackgroundForSection:(NSInteger)section;
 		[Export("collectionView:shouldHideHeaderBackgroundForSection:")]
-		bool CollectionViewShouldHideHeaderBackgroundForSection(UICollectionView collectionView, nint section);
+		bool ShouldHideHeaderBackgroundForSection(UICollectionView collectionView, nint section);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideFooterBackgroundForSection:(NSInteger)section;
 		[Export("collectionView:shouldHideFooterBackgroundForSection:")]
-		bool CollectionViewShouldHideFooterBackgroundForSection(UICollectionView collectionView, nint section);
+		bool ShouldHideFooterBackgroundForSection(UICollectionView collectionView, nint section);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideItemSeparatorAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:shouldHideItemSeparatorAtIndexPath:")]
-		bool CollectionViewShouldHideItemSeparatorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool ShouldHideItemSeparatorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideHeaderSeparatorForSection:(NSInteger)section;
 		[Export("collectionView:shouldHideHeaderSeparatorForSection:")]
-		bool CollectionViewShouldHideHeaderSeparatorForSection(UICollectionView collectionView, nint section);
+		bool ShouldHideHeaderSeparatorForSection(UICollectionView collectionView, nint section);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHideFooterSeparatorForSection:(NSInteger)section;
 		[Export("collectionView:shouldHideFooterSeparatorForSection:")]
-		bool CollectionViewShouldHideFooterSeparatorForSection(UICollectionView collectionView, nint section);
+		bool ShouldHideFooterSeparatorForSection(UICollectionView collectionView, nint section);
 
 		// @optional -(void)collectionView:(UICollectionView * _Nonnull)collectionView didApplyInlayToItemAtIndexPaths:(NSArray<NSIndexPath *> * _Nonnull)indexPaths;
 		[Export("collectionView:didApplyInlayToItemAtIndexPaths:")]
-		void CollectionViewDidApplyInlayToItemAtIndexPaths(UICollectionView collectionView, NSIndexPath[] indexPaths);
+		void DidApplyInlayToItemAtIndexPaths(UICollectionView collectionView, NSIndexPath[] indexPaths);
 
 		// @optional -(void)collectionView:(UICollectionView * _Nonnull)collectionView didRemoveInlayFromItemAtIndexPaths:(NSArray<NSIndexPath *> * _Nonnull)indexPaths;
 		[Export("collectionView:didRemoveInlayFromItemAtIndexPaths:")]
-		void CollectionViewDidRemoveInlayFromItemAtIndexPaths(UICollectionView collectionView, NSIndexPath[] indexPaths);
+		void DidRemoveInlayFromItemAtIndexPaths(UICollectionView collectionView, NSIndexPath[] indexPaths);
 
 		// @optional -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView hidesInkViewAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:hidesInkViewAtIndexPath:")]
-		bool CollectionViewHidesInkViewAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool HidesInkViewAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(UIColor * _Nullable)collectionView:(UICollectionView * _Nonnull)collectionView inkColorAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:inkColorAtIndexPath:")]
 		[return: NullAllowed]
-		UIColor CollectionViewInkColorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		UIColor InkColorAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// @optional -(MDCInkView * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController inkViewAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 		[Export("collectionView:inkTouchController:inkViewAtIndexPath:")]
-		MDCInkView CollectionViewInkTouchController(UICollectionView collectionView, MDCInkTouchController inkTouchController, NSIndexPath indexPath);
+		MDCInkView InkTouchController(UICollectionView collectionView, MDCInkTouchController inkTouchController, NSIndexPath indexPath);
 	}
 
 	// @interface MDCCollectionViewController : UICollectionViewController <MDCCollectionViewEditingDelegate, MDCCollectionViewStylingDelegate, UICollectionViewDelegateFlowLayout>
@@ -449,48 +449,48 @@ namespace MaterialComponents.MaterialCollections
 		// -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:shouldHighlightItemAtIndexPath:")]
 		//FIXME: Enable when Generator is updated [RequiresSuper]
-		bool CollectionViewShouldHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool ShouldHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didHighlightItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didHighlightItemAtIndexPath:")]
 		//[RequiresSuper]
-		void CollectionViewDidHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		void DidHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didUnhighlightItemAtIndexPath:")]
 		//[RequiresSuper]
-		void CollectionViewDidUnhighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		void DidUnhighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:shouldSelectItemAtIndexPath:")]
 		//[RequiresSuper]
-		bool CollectionViewShouldSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool ShouldSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(BOOL)collectionView:(UICollectionView * _Nonnull)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:shouldDeselectItemAtIndexPath:")]
 		//[RequiresSuper]
-		bool CollectionViewShouldDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		bool ShouldDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didSelectItemAtIndexPath:")]
 		//[RequiresSuper]
-		void CollectionViewDdidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		void DdidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didDeselectItemAtIndexPath:")]
 		//[RequiresSuper]
-		void CollectionViewDidDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		void DidDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionViewWillBeginEditing:(UICollectionView * _Nonnull)collectionView __attribute__((objc_requires_super));
 		[Export("collectionViewWillBeginEditing:")]
 		//[RequiresSuper]
-		new void CollectionViewWillBeginEditing(UICollectionView collectionView);
+		new void WillBeginEditing(UICollectionView collectionView);
 
 		// -(void)collectionViewWillEndEditing:(UICollectionView * _Nonnull)collectionView __attribute__((objc_requires_super));
 		[Export("collectionViewWillEndEditing:")]
 		//[RequiresSuper]
 		//FIXME: added new
-		new void CollectionViewWillEndEditing(UICollectionView collectionView);
+		new void WillEndEditing(UICollectionView collectionView);
 
 		// -(CGFloat)cellWidthAtSectionIndex:(NSInteger)section;
 		[Export("cellWidthAtSectionIndex:")]
@@ -503,117 +503,8 @@ namespace MaterialComponents.MaterialCollections
 	{
 	}
 
-	// FIXME:// @interface MDCInkGestureRecognizer : UIGestureRecognizer
-	/*[BaseType(typeof(UIGestureRecognizer))]
-    interface MDCInkGestureRecognizer
-    {
-        // @property (assign, nonatomic) CGFloat dragCancelDistance;
-        [Export("dragCancelDistance")]
-        nfloat DragCancelDistance { get; set; }
 
-        // @property (assign, nonatomic) BOOL cancelOnDragOut;
-        [Export("cancelOnDragOut")]
-        bool CancelOnDragOut { get; set; }
-
-        // @property (nonatomic) CGRect targetBounds;
-        [Export("targetBounds", ArgumentSemantic.Assign)]
-        CGRect TargetBounds { get; set; }
-
-        // -(CGPoint)touchStartLocationInView:(UIView *)view;
-        [Export("touchStartLocationInView:")]
-        CGPoint TouchStartLocationInView(UIView view);
-
-        // -(BOOL)isTouchWithinTargetBounds;
-        [Export("isTouchWithinTargetBounds")]
-        //[Verify(MethodToProperty)]
-        bool IsTouchWithinTargetBounds { get; }
-    }
-
-    // @interface MDCInkTouchController : NSObject <UIGestureRecognizerDelegate>
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MDCInkTouchController : IUIGestureRecognizerDelegate
-    {
-        // @property (readonly, nonatomic, weak) UIView * _Nullable view;
-        [NullAllowed, Export("view", ArgumentSemantic.Weak)]
-        UIView View { get; }
-
-        // @property (readonly, nonatomic, strong) MDCInkView * _Nonnull defaultInkView;
-        [Export("defaultInkView", ArgumentSemantic.Strong)]
-        MDCInkView DefaultInkView { get; }
-
-        [Wrap("WeakDelegate")]
-        [NullAllowed]
-        MDCInkTouchControllerDelegate Delegate { get; set; }
-
-        // @property (nonatomic, weak) id<MDCInkTouchControllerDelegate> _Nullable delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
-        NSObject WeakDelegate { get; set; }
-
-        // @property (assign, nonatomic) BOOL delaysInkSpread;
-        [Export("delaysInkSpread")]
-        bool DelaysInkSpread { get; set; }
-
-        // @property (assign, nonatomic) CGFloat dragCancelDistance;
-        [Export("dragCancelDistance")]
-        nfloat DragCancelDistance { get; set; }
-
-        // @property (assign, nonatomic) BOOL cancelsOnDragOut;
-        [Export("cancelsOnDragOut")]
-        bool CancelsOnDragOut { get; set; }
-
-        // @property (nonatomic) CGRect targetBounds;
-        [Export("targetBounds", ArgumentSemantic.Assign)]
-        CGRect TargetBounds { get; set; }
-
-        // @property (readonly, nonatomic, strong) MDCInkGestureRecognizer * _Nonnull gestureRecognizer;
-        [Export("gestureRecognizer", ArgumentSemantic.Strong)]
-        MDCInkGestureRecognizer GestureRecognizer { get; }
-
-        // -(instancetype _Nonnull)initWithView:(UIView * _Nonnull)view __attribute__((objc_designated_initializer));
-        [Export("initWithView:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(UIView view);
-
-        // -(void)addInkView;
-        [Export("addInkView")]
-        void AddInkView();
-
-        // -(void)cancelInkTouchProcessing;
-        [Export("cancelInkTouchProcessing")]
-        void CancelInkTouchProcessing();
-
-        // -(MDCInkView * _Nullable)inkViewAtTouchLocation:(CGPoint)location;
-        [Export("inkViewAtTouchLocation:")]
-        [return: NullAllowed]
-        MDCInkView InkViewAtTouchLocation(CGPoint location);
-    }
-
-    // @protocol MDCInkTouchControllerDelegate <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface MDCInkTouchControllerDelegate
-    {
-        // @optional -(void)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController insertInkView:(UIView * _Nonnull)inkView intoView:(UIView * _Nonnull)view;
-        [Export("inkTouchController:insertInkView:intoView:")]
-        void InkTouchController(MDCInkTouchController inkTouchController, UIView inkView, UIView view);
-
-        // @optional -(MDCInkView * _Nullable)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController inkViewAtTouchLocation:(CGPoint)location;
-        [Export("inkTouchController:inkViewAtTouchLocation:")]
-        [return: NullAllowed]
-        MDCInkView InkTouchControllerInkViewAtTouchLocation(MDCInkTouchController inkTouchController, CGPoint location);
-
-        // @optional -(BOOL)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController shouldProcessInkTouchesAtTouchLocation:(CGPoint)location;
-        [Export("inkTouchController:shouldProcessInkTouchesAtTouchLocation:")]
-        bool InkTouchControllerShouldProcessInkTouchesAtTouchLocation(MDCInkTouchController inkTouchController, CGPoint location);
-
-        // @optional -(void)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController didProcessInkView:(MDCInkView * _Nonnull)inkView atTouchLocation:(CGPoint)location;
-        [Export("inkTouchController:didProcessInkView:atTouchLocation:")]
-        void InkTouchControllerDidProcessInkView(MDCInkTouchController inkTouchController, MDCInkView inkView, CGPoint location);
-    }
-
-    */
-	// @interface MDCCollectionViewCell : UICollectionViewCell
+    // @interface MDCCollectionViewCell : UICollectionViewCell
 	[BaseType(typeof(UICollectionViewCell))]
 	interface MDCCollectionViewCell
 	{
