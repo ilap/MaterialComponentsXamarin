@@ -38,7 +38,7 @@ namespace MDCTutorial
         
 		MDCAppBar appBar = new MDCAppBar();
 		MDCFloatingButton fab = new MDCFloatingButton();
-
+        UIBarButtonItem navBtn;
 		protected ViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
@@ -58,15 +58,23 @@ namespace MDCTutorial
 			appBar.HeaderViewController.HeaderView.TrackingScrollView = CollectionView;
 			appBar.AddSubviewsToParent();
 
-			Title = "Material Components";
+			Title = "Material";
 
             // FIXME: Does not work.
-			this.NavigationItem.SetRightBarButtonItem(
-				new UIBarButtonItem(UIBarButtonSystemItem.Action, (sender, args) => {
-					// button was clicked
-				})
-			, true);
+            navBtn = new UIBarButtonItem(UIBarButtonSystemItem.Done, null) {
+                Title = "Edit",
+                Style = UIBarButtonItemStyle.Plain
+            };
+            navBtn.Clicked += OnDoneClicked;
 
+			//this.NavigationItem.SetRightBarButtonItem(
+			//	new UIBarButtonItem(UIBarButtonSystemItem.Action, (sender, args) => {
+            //        // button was clicked
+             //       Console.WriteLine("UIBarButtonItem");
+             //       })
+			//, true);
+            NavigationItem.SetLeftBarButtonItem(navBtn, true);
+            //base.NavigationItem.
 			appBar.NavigationBar.TintColor = UIColor.Black;
 
 			//FIXME: Does not work if MDCCollectionViewEditing is an Abstract Class
@@ -80,6 +88,11 @@ namespace MDCTutorial
 			fab.SetTitle("+", UIControlState.Normal);
 			fab.SetTitle("-", UIControlState.Selected);
 			fab.AddTarget(FabDidTap, UIControlEvent.TouchUpInside);
+		}
+
+		void OnDoneClicked(object sender, EventArgs args)
+		{
+			Console.WriteLine("This isn't firing...");
 		}
 
 		public override void ViewWillAppear(bool animated)
