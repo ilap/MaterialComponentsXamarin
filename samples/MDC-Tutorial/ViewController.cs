@@ -39,13 +39,12 @@ namespace MDCTutorial
 		MDCAppBar appBar = new MDCAppBar();
 		MDCFloatingButton fab = new MDCFloatingButton();
         UIBarButtonItem navBtn;
-		protected ViewController(IntPtr handle) : base(handle)
-		{
+
+		protected ViewController(IntPtr handle) : base(handle) {
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
-		public override void ViewDidLoad()
-		{
+		public override void ViewDidLoad() {
 			base.ViewDidLoad();
 			// FIXME: Does not work if Styling is an Abstract Class
 			var styler = this.Styler;
@@ -90,26 +89,22 @@ namespace MDCTutorial
 			fab.AddTarget(FabDidTap, UIControlEvent.TouchUpInside);
 		}
 
-		void OnDoneClicked(object sender, EventArgs args)
-		{
+		void OnDoneClicked(object sender, EventArgs args) {
 			Console.WriteLine("This isn't firing...");
 		}
 
-		public override void ViewWillAppear(bool animated)
-		{
+		public override void ViewWillAppear(bool animated) {
 			base.ViewWillAppear(animated);
 			NavigationController?.SetNavigationBarHidden(true, animated);
 		}
 
 		// MARK: UICollectionViewDataSource
 
-		public override nint NumberOfSections(UICollectionView collectionView)
-		{
+		public override nint NumberOfSections(UICollectionView collectionView) {
 			return 5;
 		}
 
-		public override nint GetItemsCount(UICollectionView collectionView, nint section)
-		{
+		public override nint GetItemsCount(UICollectionView collectionView, nint section) {
 			return 4;
 		}
 
@@ -126,67 +121,51 @@ namespace MDCTutorial
 
 		// MARK: UIScrollViewDelegate
 
-		public override bool PrefersStatusBarHidden()
-		{
+		public override bool PrefersStatusBarHidden() {
 			return false;
 		}
 
-		public override void DecelerationEnded(UIScrollView scrollView)
-		{
+		public override void DecelerationEnded(UIScrollView scrollView) {
 			var hv = appBar.HeaderViewController.HeaderView;
 
-			if (scrollView == hv.TrackingScrollView)
-			{
+			if (scrollView == hv.TrackingScrollView) {
 				hv.TrackingScrollViewDidEndDecelerating();
 			}
 		}
 
-		public override void Scrolled(UIScrollView scrollView)
-		{
+		public override void Scrolled(UIScrollView scrollView) {
 			var hv = appBar.HeaderViewController.HeaderView;
 
-			if (scrollView == hv.TrackingScrollView)
-			{
+			if (scrollView == hv.TrackingScrollView) {
 				hv.TrackingScrollViewDidScroll();
 			}
 		}
 
-        public override void WillEndDragging(UIScrollView scrollView, CoreGraphics.CGPoint velocity, ref CoreGraphics.CGPoint targetContentOffset)
-        {
+        public override void WillEndDragging(UIScrollView scrollView, CoreGraphics.CGPoint velocity, ref CoreGraphics.CGPoint targetContentOffset) {
 			var hv = appBar.HeaderViewController.HeaderView;
 
-            if (scrollView == hv.TrackingScrollView)
-            {
+            if (scrollView == hv.TrackingScrollView) {
                 hv.TrackingScrollViewWillEndDraggingWithVelocity(velocity, targetContentOffset);
             }
 
         }
 
-        public override void DraggingEnded(UIScrollView scrollView, bool willDecelerate)
-        {
+        public override void DraggingEnded(UIScrollView scrollView, bool willDecelerate) {
 			var hv = appBar.HeaderViewController.HeaderView;
 
-			if (scrollView == hv.TrackingScrollView)
-			{
+			if (scrollView == hv.TrackingScrollView) {
                 hv.TrackingScrollViewDidEndDraggingWillDecelerate(willDecelerate);
 			}
         }
 
 		// MARK: Button DID Tap
 
-		public void FabDidTap(object sender, EventArgs args)
-		{
-            if (sender is UIButton)
-			{
+		public void FabDidTap(object sender, EventArgs args) {
+            if (sender is UIButton) {
 				var s = sender as UIButton;
 				this.Editor.Editing = !this.Editor.Editing;
 				s.Selected = !s.Selected;
 			}
 		}
-
-		//public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
-		//{
-		//  base.ItemSelected(collectionView, indexPath);
-		//}
 	}
 }

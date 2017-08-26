@@ -9,7 +9,7 @@
     <RootNamespace>MaterialComponents</RootNamespace>
     <AssemblyName>MaterialComponents</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>31.0.0</ReleaseVersion>
+    <ReleaseVersion>31.0.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

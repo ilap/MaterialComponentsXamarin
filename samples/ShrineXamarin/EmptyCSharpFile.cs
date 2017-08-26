@@ -1,6 +1,10 @@
 ﻿//
-// Copyright (c) 2017 The Material Components for iOS Xamarin Binding Authors.
-// All Rights Reserved.
+// EmptyCSharpFile.cs
+//
+// Author:
+//       Pal Dorogi <pal.dorogi@gmail.com>
+//
+// Copyright (c) 2017 Pal Dorogi (c)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,20 +23,3 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-//
-
-using UIKit;
-
-namespace MDCTutorial
-{
-    public class Application
-    {
-        // This is the main entry point of the application.
-        static void Main(string[] args)
-        {
-            // if you want to use a different Application Delegate class from "AppDelegate"
-            // you can specify it here.
-            UIApplication.Main(args, null, "AppDelegate");
-        }
-    }
-}

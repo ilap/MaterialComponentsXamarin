@@ -9,7 +9,7 @@
     <RootNamespace>MDCTutorial</RootNamespace>
     <AssemblyName>MDC-Sample</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>31.0.0</ReleaseVersion>
+    <ReleaseVersion>31.0.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

@@ -21,18 +21,36 @@
 // THE SOFTWARE.
 //
 
-using UIKit;
+using System;
 
-namespace MDCTutorial
-{
-    public class Application
+using Foundation;
+
+namespace ShrineXamarin.Model 
+{   
+    public class Product: NSObject 
     {
-        // This is the main entry point of the application.
-        static void Main(string[] args)
-        {
-            // if you want to use a different Application Delegate class from "AppDelegate"
-            // you can specify it here.
-            UIApplication.Main(args, null, "AppDelegate");
+        public String ImagePath;
+        public String Price;
+        public Boolean IsFavorite = false;
+
+        static Random rand = new Random();
+
+        public Product() {
+            var r = rand.Next() % 100;
+            Price = "$" + r.ToString();
+        }
+
+        public override Boolean IsEqual(NSObject any) {
+            
+            if (any is Product) {
+
+                var product = any as Product;
+                return product.ImagePath == this.ImagePath &&
+                              product.Price == this.Price &&
+                              product.IsFavorite == this.IsFavorite;
+            }
+
+            return false;
         }
     }
 }

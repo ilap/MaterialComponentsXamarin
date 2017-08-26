@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ShrineXamarin</RootNamespace>
+    <AssemblyName>ShrineXamarin</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>31.0.1</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>15851</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>52569</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76_2x.png" />
+    <ImageAsset Include="Assets.xcassets\Cart.imageset\Cart.png" />
+    <ImageAsset Include="Assets.xcassets\Cart.imageset\Cart%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Cart.imageset\Cart%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Cart.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\shrine_text_logo.pdf" />
+    <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Shrine_logo_launchscreen.pdf" />
+    <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\shrine_logo_withicon.pdf" />
+    <ImageAsset Include="Assets.xcassets\HeartFull.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HeartFull.imageset\HeartOpaque.png" />
+    <ImageAsset Include="Assets.xcassets\HeartFull.imageset\HeartOpaque%402x.png" />
+    <ImageAsset Include="Assets.xcassets\HeartFull.imageset\HeartOpaque%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Diamond.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Diamond.imageset\Diamond.png" />
+    <ImageAsset Include="Assets.xcassets\Diamond.imageset\Diamond%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Diamond.imageset\Diamond%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HeartEmpty.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HeartEmpty.imageset\HeartEmpty.png" />
+    <ImageAsset Include="Assets.xcassets\HeartEmpty.imageset\HeartEmpty%402x.png" />
+    <ImageAsset Include="Assets.xcassets\HeartEmpty.imageset\HeartEmpty%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="ProductGrid.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductFactory.cs" />
+    <Compile Include="ProductGridViewController.cs" />
+    <Compile Include="ProductGridViewController.designer.cs">
+      <DependentUpon>ProductGridViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCollectionViewCell.cs" />
+    <Compile Include="ProductCollectionViewCell.designer.cs">
+      <DependentUpon>ProductCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeHeaderView.cs" />
+    <Compile Include="HomeHeaderView.designer.cs">
+      <DependentUpon>HomeHeaderView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Clothing\backpack.png" />
+    <BundleResource Include="Resources\Clothing\binoculars.png" />
+    <BundleResource Include="Resources\Clothing\chucks.png" />
+    <BundleResource Include="Resources\Clothing\flippers.png" />
+    <BundleResource Include="Resources\Clothing\heels.png" />
+    <BundleResource Include="Resources\Clothing\helmet.png" />
+    <BundleResource Include="Resources\Clothing\lipstick.png" />
+    <BundleResource Include="Resources\Clothing\shoes.png" />
+    <BundleResource Include="Resources\Clothing\sunnies.png" />
+    <BundleResource Include="Resources\Clothing\umbrella.png" />
+    <BundleResource Include="Resources\Home\beachball.png" />
+    <BundleResource Include="Resources\Home\brush.png" />
+    <BundleResource Include="Resources\Home\chair.png" />
+    <BundleResource Include="Resources\Home\clock.png" />
+    <BundleResource Include="Resources\Home\fishbowl.png" />
+    <BundleResource Include="Resources\Home\lamp.png" />
+    <BundleResource Include="Resources\Home\lawnchair.png" />
+    <BundleResource Include="Resources\Home\pen.png" />
+    <BundleResource Include="Resources\Home\radio.png" />
+    <BundleResource Include="Resources\Home\surfboard.png" />
+    <BundleResource Include="Resources\Home\teapot.png" />
+    <BundleResource Include="Resources\Home\tools.png" />
+    <BundleResource Include="Resources\Home\typewriter.png" />
+    <BundleResource Include="Resources\fishbowl.png" />
+    <BundleResource Include="Resources\popsicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MaterialComponents\MaterialComponents.csproj">
+      <Project>{F888B10B-1D2E-44F5-AAE9-3335566E67A7}</Project>
+      <Name>MaterialComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
