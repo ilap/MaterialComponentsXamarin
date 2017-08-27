@@ -1,5 +1,7 @@
-<img align="left" src="arts/MDC.png" width=86 >
+<img align="left" src="arts/MDC.png" width=64 >
+
 # Xamarin Binding for Material Components for iOS
+
 <img align="right" src="arts/Shrine.gif" width="320px">
 Xamarin.iOS bindigs for Material Components for iOS (MDC-iOS).
 
