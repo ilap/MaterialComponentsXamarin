@@ -100,7 +100,9 @@ namespace ShrineXamarin
         void UpdateLayout() {
             
             SizeHeaderView();
-
+            if (this.Styler == null) {
+                return;
+            }
             if (UIDevice.CurrentDevice.UserInterfaceIdiom == 
                 UIUserInterfaceIdiom.Pad) {
                 Styler.GridColumnCount = 5;

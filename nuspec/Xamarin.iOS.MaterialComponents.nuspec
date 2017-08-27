@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Xamarin.iOS.MaterialComponents</id>
-    <version>31.0.0</version>
+    <version>31.0.1</version>
     <title>Xamarin.iOS.MaterialComponents</title>
     <authors>ilap</authors>
     <licenseUrl>https://github.com/ilap/MaterialComponentsXamarin/blob/master/LICENSE</licenseUrl>
