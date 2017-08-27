@@ -1,13 +1,10 @@
+<img align="left" src="arts/MDC.png" width=86 >
 # Xamarin Binding for Material Components for iOS
 <img align="right" src="arts/Shrine.gif" width="320px">
 Xamarin.iOS bindigs for Material Components for iOS (MDC-iOS).
 
 [![Build Status](https://www.bitrise.io/app/90b72d60b57288b7/status.svg?token=EMYZt7i6cIt8J8-uNQRmkA&branch=master)](https://www.bitrise.io/app/90b72d60b57288b7)
 [![NuGet Badge](https://buildstats.info/nuget/Xamarin.iOS.MaterialComponents)](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents/)
-
-<p align="center">
-<img src="arts/MDC.png" width=86 >
-</p>
 
 ## Usage
 - Scenario 1: Try the Sample app - Clone and open the MaterialComponents solution.
