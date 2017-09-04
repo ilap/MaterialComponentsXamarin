@@ -36,23 +36,29 @@ namespace ShrineXamarin
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
+
             CollectionView.ContentInset = 
                 new UIEdgeInsets(0, 0, 
                                  TabBarController.TabBar.Bounds.Size.Height, 0);
 
             AddChildViewController(appBar.HeaderViewController);
-            appBar.AddSubviewsToParent();
+
+ 
+
             appBar.HeaderViewController.HeaderView.TrackingScrollView = 
                 CollectionView;
             appBar.HeaderViewController.HeaderView.BackgroundColor = 
                 UIColor.White;
             appBar.HeaderViewController.HeaderView.MaximumHeight = 440;
             appBar.HeaderViewController.HeaderView.MinimumHeight = 72;
+            appBar.AddSubviewsToParent();
 
-            if (isHome) {
+            if (isHome)
+            {
                 SetupHeaderContentView();
                 SetupHeaderLogo();
             }
+
             Title = TabBarItem.Title;
 
             Styler.CellStyle = MDCCollectionViewCellStyle.Card;
@@ -126,7 +132,7 @@ namespace ShrineXamarin
             logo.TopAnchor.ConstraintEqualTo(logo.Superview.TopAnchor, 24).Active = true;
             logo.CenterXAnchor.ConstraintEqualTo(View.CenterXAnchor).Active = true;
             logo.TranslatesAutoresizingMaskIntoConstraints = false;
-            logo.Alpha = 0;
+            logo.Alpha = 0.5f;
         }
 
         // MARK: Collectionviews
@@ -199,12 +205,12 @@ namespace ShrineXamarin
             //base.Scrolled(scrollView);
             appBar.HeaderViewController.Scrolled(scrollView);
             var scrollOffsetY = scrollView.ContentOffset.Y;
-            var opacity = 1f;
-            var logoOpacity = 0f;
+            var opacity = 0.7f;
+            var logoOpacity = 0.3f;
 
             if (scrollOffsetY > -240) {
-                opacity = 0f;
-                logoOpacity = 1f;
+                opacity = 0.3f;
+                logoOpacity = 0.7f;
             }
 
             UIView.Animate(0.5, () => {

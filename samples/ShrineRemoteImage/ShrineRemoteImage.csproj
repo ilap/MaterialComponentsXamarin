@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}</ProjectGuid>
+    <ProjectGuid>{F06E20A4-BA44-4986-A8B3-E8529F025E5A}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MDCTutorial</RootNamespace>
-    <AssemblyName>MDC-Sample</AssemblyName>
+    <RootNamespace>ShrineRemoteImage.iOS</RootNamespace>
+    <AssemblyName>ShrineRemoteImage.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -22,7 +22,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <IOSDebuggerPort>25218</IOSDebuggerPort>
+    <IOSDebuggerPort>48084</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -70,7 +70,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <IOSDebuggerPort>51512</IOSDebuggerPort>
+    <IOSDebuggerPort>17828</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -81,13 +81,31 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Json" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\shrine_text_logo.pdf" />
+    <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\shrine_logo_withicon.pdf" />
+    <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Shrine_logo_launchscreen.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Service\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -96,14 +114,31 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="Views\ShrineCollectionViewController.cs" />
+    <Compile Include="Views\ShrineHeaderContentView.cs" />
+    <Compile Include="Views\ViewController.cs" />
+    <Compile Include="Views\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ShrineFlexibleHeaderContainerViewController.cs" />
+    <Compile Include="Views\ShrineCollectionViewCell.cs" />
+    <Compile Include="Views\ShrineInkOverlay.cs" />
+    <Compile Include="Views\ShrineHeaderPage.cs" />
+    <Compile Include="Model\ShrineData.cs" />
+    <Compile Include="Service\RemoteImageService.cs" />
+    <Compile Include="Views\ShrineDetailViewController.cs" />
+    <Compile Include="Views\ShrineDetailView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AbrilFatface-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\products.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\MaterialComponents\MaterialComponents.csproj">
