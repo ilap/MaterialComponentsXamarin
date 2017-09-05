@@ -88,18 +88,18 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo2x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo3x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76_2x.png" />
     <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ShrineTextLogo.imageset\shrine_text_logo.pdf" />
     <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ShrineLogo.imageset\shrine_logo_withicon.pdf" />
     <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ShrineLaunchLogo.imageset\Shrine_logo_launchscreen.pdf" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\logo_76_2x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -109,7 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

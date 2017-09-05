@@ -115,10 +115,10 @@ namespace ShrineRemoteImage.iOS.View
             var url = new NSUrl(urlString);
 
             remoteImageService.FetchImageAndThumbNail(url, (UIImage image, UIImage thumbnailImage) => {
-                DispatchQueue.MainQueue.DispatchAsync(() => {
+                DispatchQueue.MainQueue.DispatchSync(() => {
                     // FIXME: ThumbnailImage does not work
-                    this.imageView.Image = image;
-                    this.imageView.SetNeedsDisplay();
+                        this.imageView.Image = image;
+                        this.imageView.SetNeedsDisplay();
                 });
             });
 
@@ -126,10 +126,10 @@ namespace ShrineRemoteImage.iOS.View
             var avatarUrl = new NSUrl(avatarUrlString);
 
             remoteImageService.FetchImageAndThumbNail(avatarUrl, (UIImage image, UIImage thumbnailImage) => {
-                DispatchQueue.MainQueue.DispatchAsync(() => {
+                DispatchQueue.MainQueue.DispatchSync(() => {
                     // FIXME: ThumbnailImage does not work
-                    this.avatarView.Image = image;
-                    this.avatarView.SetNeedsDisplay();
+                        this.avatarView.Image = image;
+                        this.avatarView.SetNeedsDisplay();
                 });
             });
         }

@@ -44,8 +44,8 @@ namespace ShrineRemoteImage.iOS.View
 
             remoteImageService.FetchImageAndThumbNail(url, (UIImage image, UIImage thumbnailImage) => {
                 DispatchQueue.MainQueue.DispatchAsync(() => {
-                    this.imageView.Image = image;
-                    imageView.SetNeedsDisplay();
+                        this.imageView.Image = image;
+                        imageView.SetNeedsDisplay();
                 });
             });
 

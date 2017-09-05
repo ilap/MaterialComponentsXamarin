@@ -97,9 +97,14 @@ namespace ShrineRemoteImage.iOS
             DispatchQueue.GetGlobalQueue(DispatchQueuePriority.Background).DispatchAsync(() =>
             {
                 UIImage image = FetchImageFromURL(url);
-                UIImage thumbnailImage = FetchThumbnailImageFromURL(url);
+                //UIImage thumbnailImage = FetchThumbnailImageFromURL(url);
+                //UIImage thumbnailImage = null;
 
-                d(image, thumbnailImage);
+                if (image == null)
+                {
+                    Console.WriteLine("Image is null");
+                }
+                d(image, null);
             });
         }
 
