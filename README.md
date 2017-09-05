@@ -3,6 +3,7 @@
 # Xamarin Binding for Material Components for iOS
 
 <img align="right" src="arts/Shrine.gif" width="320px">
+<img align="right" src="arts/ShrineRemoteImage.gif" width="320px">
 Xamarin.iOS bindigs for Material Components for iOS (MDC-iOS).
 
 [![Build Status](https://www.bitrise.io/app/90b72d60b57288b7/status.svg?token=EMYZt7i6cIt8J8-uNQRmkA&branch=master)](https://www.bitrise.io/app/90b72d60b57288b7)
