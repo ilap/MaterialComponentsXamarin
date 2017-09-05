@@ -123,20 +123,20 @@ namespace MaterialComponents.MaterialInk
 	{
 		// @optional -(void)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController insertInkView:(UIView * _Nonnull)inkView intoView:(UIView * _Nonnull)view;
 		[Export("inkTouchController:insertInkView:intoView:")]
-		void InkTouchController(MDCInkTouchController inkTouchController, UIView inkView, UIView view);
+		void InsertInkViewIntoView(MDCInkTouchController inkTouchController, UIView inkView, UIView view);
 
 		// @optional -(MDCInkView * _Nullable)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController inkViewAtTouchLocation:(CGPoint)location;
 		[Export("inkTouchController:inkViewAtTouchLocation:")]
 		[return: NullAllowed]
-		MDCInkView InkTouchControllerInkViewAtTouchLocation(MDCInkTouchController inkTouchController, CGPoint location);
+		MDCInkView InkViewAtTouchLocation(MDCInkTouchController inkTouchController, CGPoint location);
 
 		// @optional -(BOOL)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController shouldProcessInkTouchesAtTouchLocation:(CGPoint)location;
 		[Export("inkTouchController:shouldProcessInkTouchesAtTouchLocation:")]
-		bool InkTouchController(MDCInkTouchController inkTouchController, CGPoint location);
+		bool ShouldProcessInkTouchesAtTouchLocation(MDCInkTouchController inkTouchController, CGPoint location);
 
 		// @optional -(void)inkTouchController:(MDCInkTouchController * _Nonnull)inkTouchController didProcessInkView:(MDCInkView * _Nonnull)inkView atTouchLocation:(CGPoint)location;
 		[Export("inkTouchController:didProcessInkView:atTouchLocation:")]
-		void InkTouchController(MDCInkTouchController inkTouchController, MDCInkView inkView, CGPoint location);
+		void DidProcessInkView(MDCInkTouchController inkTouchController, MDCInkView inkView, CGPoint location);
 	}
 
 	// typedef void (^MDCInkCompletionBlock)();
