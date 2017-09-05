@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialComponents", "src\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC-Tutorial", "samples\MDC-Tutorial\MDC-Tutorial.csproj", "{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShrineXamarin", "samples\ShrineXamarin\ShrineXamarin.csproj", "{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,18 +45,6 @@ Global
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.Build.0 = Debug|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|Any CPU.Build.0 = Release|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|iPhone.ActiveCfg = Release|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|iPhone.Build.0 = Release|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{05DED03B-94AD-46B9-9BC9-57FB73DE3E79}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
