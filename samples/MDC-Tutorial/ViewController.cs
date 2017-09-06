@@ -35,9 +35,9 @@ namespace MDCTutorial
 {
 	public partial class ViewController : MDCCollectionViewController
 	{
-        
-		MDCAppBar appBar = new MDCAppBar();
-		MDCFloatingButton fab = new MDCFloatingButton();
+
+        MDCAppBar appBar = new MDCAppBar();
+        MDCFloatingButton fab = new MDCFloatingButton();
         UIBarButtonItem navBtn;
 
 		protected ViewController(IntPtr handle) : base(handle) {
@@ -46,6 +46,7 @@ namespace MDCTutorial
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad();
+
 			// FIXME: Does not work if Styling is an Abstract Class
 			var styler = this.Styler;
 			styler.CellStyle = MDCCollectionViewCellStyle.Card;

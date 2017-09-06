@@ -94,6 +94,24 @@ namespace MaterialComponents.MaterialButtons
 		[Export ("setElevation:forState:")]
 		void SetElevation (nfloat elevation, UIControlState state);
 
+        // MARK: Check v34.0.1
+        // -(UIColor * _Nullable)borderColorForState:(UIControlState)state;
+        [Export("borderColorForState:")]
+        [return: NullAllowed]
+        UIColor BorderColorForState(UIControlState state);
+
+        // -(void)setBorderColor:(UIColor * _Nullable)borderColor forState:(UIControlState)state __attribute__((annotate("ui_appearance_selector")));
+        [Export("setBorderColor:forState:")]
+        void SetBorderColor([NullAllowed] UIColor borderColor, UIControlState state);
+
+        // -(CGFloat)borderWidthForState:(UIControlState)state;
+        [Export("borderWidthForState:")]
+        nfloat BorderWidthForState(UIControlState state);
+
+        // -(void)setBorderWidth:(CGFloat)borderWidth forState:(UIControlState)state __attribute__((annotate("ui_appearance_selector")));
+        [Export("setBorderWidth:forState:")]
+        void SetBorderWidth(nfloat borderWidth, UIControlState state);
+
 		// @property (nonatomic, strong) UIColor * _Nullable customTitleColor __attribute__((deprecated("Use setTitleColor:forState: instead"))) __attribute__((annotate("ui_appearance_selector")));
 		[NullAllowed, Export ("customTitleColor", ArgumentSemantic.Strong)]
 		UIColor CustomTitleColor { get; set; }
@@ -121,7 +139,7 @@ namespace MaterialComponents.MaterialButtons
 		bool HasOpaqueBackground { get; set; }
 	}
 
-	// @interface MDCFloatingButton : MDCButton
+    // @interface MDCFloatingButton : MDCButton
     //[Protocol, Model]
 	[BaseType (typeof(MDCButton))]
 	interface MDCFloatingButton
@@ -168,4 +186,17 @@ namespace MaterialComponents.MaterialButtons
 	interface MDCRaisedButton
 	{
 	}
+
+    // @interface Animation (MDCFloatingButton)
+    [Category]
+    [BaseType(typeof(MDCFloatingButton))]
+    interface MDCFloatingButton_Animation {
+        // -(void)expand:(BOOL)animated completion:(void (^ _Nullable)(void))completion;
+        [Export("expand:completion:")]
+        void Expand(bool animated, [NullAllowed] Action completion);
+
+        // -(void)collapse:(BOOL)animated completion:(void (^ _Nullable)(void))completion;
+        [Export("collapse:completion:")]
+        void Collapse(bool animated, [NullAllowed] Action completion);
+    }
 }

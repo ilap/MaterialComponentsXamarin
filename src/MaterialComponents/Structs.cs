@@ -175,7 +175,8 @@ namespace MaterialComponents
 	public enum MDCFloatingButtonShape : long
 	{
 		Default,
-		Mini
+		Mini,
+        Large
 	}
 
 	[Native]

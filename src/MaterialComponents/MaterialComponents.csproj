@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,7 +9,7 @@
     <RootNamespace>MaterialComponents</RootNamespace>
     <AssemblyName>MaterialComponents</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>31.0.1</ReleaseVersion>
+    <ReleaseVersion>34.0.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,23 +71,23 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\references\v31.0.1.Debug\MotionTransitioning.framework">
+    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionAnimator.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v31.0.1.Debug\MotionAnimator.framework">
+    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionInterchange.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v31.0.1.Debug\MotionInterchange.framework">
+    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionTransitioning.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v31.0.1.Debug\MDFTextAccessibility.framework">
+    <NativeReference Include="..\..\references\v34.0.1.Debug\MaterialComponents.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v31.0.1.Debug\MaterialComponents.framework">
+    <NativeReference Include="..\..\references\v34.0.1.Debug\MDFTextAccessibility.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

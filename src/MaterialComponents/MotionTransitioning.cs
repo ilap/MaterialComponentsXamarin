@@ -21,6 +21,7 @@
 using System;
 using Foundation;
 using MotionTransitioning;
+using CoreGraphics;
 using ObjCRuntime;
 using UIKit;
 
@@ -71,6 +72,11 @@ namespace MotionTransitioning
 		[Abstract]
 		[NullAllowed, Export("presentationController", ArgumentSemantic.Strong)]
 		UIPresentationController PresentationController { get; }
+
+        // @required -(void)deferToCompletion:(void (^ _Nonnull)(void))work;
+        [Abstract]
+        [Export("deferToCompletion:")]
+        void DeferToCompletion(Action work);
 	}
 
 	// @protocol MDMTransition <NSObject>
@@ -105,6 +111,27 @@ namespace MotionTransitioning
         MDMTransition FallbackTransitionWithContext(MDMTransitionContext context);
     }
 
+
+    // typedef CGRect (^MDMTransitionFrameCalculation)(UIPresentationController * _Nonnull);
+    delegate CGRect MDMTransitionFrameCalculation(UIPresentationController arg0);
+
+    // @interface MDMTransitionPresentationController : UIPresentationController
+    [BaseType(typeof(UIPresentationController))]
+    interface MDMTransitionPresentationController {
+        // -(instancetype _Nonnull)initWithPresentedViewController:(UIViewController * _Nonnull)presentedViewController presentingViewController:(UIViewController * _Nonnull)presentingViewController calculateFrameOfPresentedView:(MDMTransitionFrameCalculation _Nullable)calculateFrameOfPresentedView __attribute__((objc_designated_initializer));
+        [Export("initWithPresentedViewController:presentingViewController:calculateFrameOfPresentedView:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(UIViewController presentedViewController, UIViewController presentingViewController, [NullAllowed] MDMTransitionFrameCalculation calculateFrameOfPresentedView);
+
+        // @property (readonly, nonatomic, strong) UIView * _Nullable scrimView;
+        [NullAllowed, Export("scrimView", ArgumentSemantic.Strong)]
+        UIView ScrimView { get; }
+
+        // @property (nonatomic, strong) id<MDMTransitionPresentationAnimationControlling> _Nullable animationController;
+        [NullAllowed, Export("animationController", ArgumentSemantic.Strong)]
+        MDMTransitionPresentationAnimationControlling AnimationController { get; set; }
+    }
+
     // @protocol MDMTransitionWithPresentation <MDMTransition>
     [Protocol]//, Model]
     interface MDMTransitionWithPresentation : MDMTransition
@@ -120,5 +147,40 @@ namespace MotionTransitioning
         [Export("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")]
         [return: NullAllowed]
         UIPresentationController PresentingViewController(UIViewController presented, UIViewController presenting, [NullAllowed] UIViewController source);
+    }
+
+    // @protocol MDMTransitionPresentationAnimationControlling <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface MDMTransitionPresentationAnimationControlling {
+        // @optional -(void)presentationController:(MDMTransitionPresentationController * _Nonnull)presentationController startWithContext:(NSObject<MDMTransitionContext> * _Nonnull)context;
+        [Export("presentationController:startWithContext:")]
+        void PresentationController(MDMTransitionPresentationController presentationController, MDMTransitionContext context);
+
+        // @optional -(void)dismissalTransitionWillBeginWithPresentationController:(MDMTransitionPresentationController * _Nonnull)presentationController;
+        [Export("dismissalTransitionWillBeginWithPresentationController:")]
+        void DismissalTransitionWillBeginWithPresentationController(MDMTransitionPresentationController presentationController);
+
+        // @optional -(void)presentationController:(MDMTransitionPresentationController * _Nonnull)presentationController dismissalTransitionDidEnd:(BOOL)completed;
+        [Export("presentationController:dismissalTransitionDidEnd:")]
+        void PresentationController(MDMTransitionPresentationController presentationController, bool completed);
+    }
+
+    // @interface MDMTransitionViewSnapshotter : NSObject
+    [BaseType(typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MDMTransitionViewSnapshotter {
+        // -(instancetype _Nonnull)initWithContainerView:(UIView * _Nonnull)containerView __attribute__((objc_designated_initializer));
+        [Export("initWithContainerView:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(UIView containerView);
+
+        // -(UIView * _Nonnull)snapshotOfView:(UIView * _Nonnull)view isAppearing:(BOOL)isAppearing;
+        [Export("snapshotOfView:isAppearing:")]
+        UIView SnapshotOfView(UIView view, bool isAppearing);
+
+        // -(void)removeAllSnapshots;
+        [Export("removeAllSnapshots")]
+        void RemoveAllSnapshots();
     }
 }
