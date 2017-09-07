@@ -29,7 +29,7 @@ namespace ShrineRemoteImage.iOS
             }
         }
 
-        public delegate void FetchImage(UIImage image, UIImage thumnNail);
+        public delegate void FetchImage(UIImage image, UIImage thumbnNail);
 
         UIImage FetchImageFromURL(NSUrl url) {
 
@@ -37,11 +37,16 @@ namespace ShrineRemoteImage.iOS
             if (image != null) {
                 return image;
             } else {
-                image = (UIImage)networkImageRequested.ObjectForKey(NSObject.FromObject(url.AbsoluteString));
-                if (image != null) {
+                // MARK: Do not cast the cache to Image as it will crash.
+                // So, get a standard NSObject first and if it's not null then
+                // cast to image.
+                var urlObj = NSObject.FromObject(url.AbsoluteString);
+                var obj = networkImageRequested.ObjectForKey(urlObj);
+                if (obj != null) {
                     return null;
                 } else {
-                    networkImageRequested.SetObjectforKey(url, NSObject.FromObject(url.AbsoluteString));
+                    image = (UIImage)obj;
+                    networkImageRequested.SetObjectforKey(url, urlObj);
                 }
             }
 
@@ -90,15 +95,14 @@ namespace ShrineRemoteImage.iOS
             return thumbnailImage;
         }
 
-
         public void FetchImageAndThumbNail(NSUrl url, FetchImage d)
         {
 
+            //FIXME: Use the following for debug threads : UIDevice.InvokeInBackground ( () =>
             DispatchQueue.GetGlobalQueue(DispatchQueuePriority.Background).DispatchAsync(() =>
             {
                 UIImage image = FetchImageFromURL(url);
-                //UIImage thumbnailImage = FetchThumbnailImageFromURL(url);
-                //UIImage thumbnailImage = null;
+                // FIXME: Does not work, UIImage thumbnailImage = FetchThumbnailImageFromURL(url);
 
                 if (image == null)
                 {
