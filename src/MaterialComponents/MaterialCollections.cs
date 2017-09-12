@@ -26,6 +26,7 @@ using Foundation;
 using UIKit;
 using MaterialComponents;
 using ObjCRuntime;
+using CoreGraphics;
 
 namespace MaterialComponents.MaterialCollections
 {
@@ -153,7 +154,7 @@ namespace MaterialComponents.MaterialCollections
 
 		// @optional -(void)collectionView:(UICollectionView * _Nonnull)collectionView didDeleteSections:(NSIndexSet * _Nonnull)sections;
 		[Export("collectionView:didDeleteSections:")]
-		void DidDeleteSections(UICollectionView collectionView, NSIndexSet sections);
+		void DidDeletedSections(UICollectionView collectionView, NSIndexSet sections);
 
 		// @optional -(BOOL)collectionViewAllowsSwipeToDismissItem:(UICollectionView * _Nonnull)collectionView;
 		[Export("collectionViewAllowsSwipeToDismissItem:")]
@@ -433,9 +434,10 @@ namespace MaterialComponents.MaterialCollections
 	}
 
 	// @interface MDCCollectionViewController : UICollectionViewController <MDCCollectionViewEditingDelegate, MDCCollectionViewStylingDelegate, UICollectionViewDelegateFlowLayout>
-	[BaseType(typeof(UICollectionViewController))]
 	// HACK: Remove [
-	//[Model]
+	//[Protocol,[
+    //[ Model]
+    [BaseType(typeof(UICollectionViewController))]
 	interface MDCCollectionViewController : MDCCollectionViewEditingDelegate, MDCCollectionViewStylingDelegate, IUICollectionViewDelegateFlowLayout
 	{
 		// @property (readonly, nonatomic, strong) id<MDCCollectionViewStyling> _Nonnull styler;
@@ -474,7 +476,7 @@ namespace MaterialComponents.MaterialCollections
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didSelectItemAtIndexPath:")]
 		//[RequiresSuper]
-		void DdidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+		void DidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
 		// -(void)collectionView:(UICollectionView * _Nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath __attribute__((objc_requires_super));
 		[Export("collectionView:didDeselectItemAtIndexPath:")]
@@ -495,6 +497,10 @@ namespace MaterialComponents.MaterialCollections
 		// -(CGFloat)cellWidthAtSectionIndex:(NSInteger)section;
 		[Export("cellWidthAtSectionIndex:")]
 		nfloat CellWidthAtSectionIndex(nint section);
+
+        [Export("initWithCollectionViewLayout:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(UICollectionViewLayout layout);
 	}
 
 	// @interface MDCCollectionViewFlowLayout : UICollectionViewFlowLayout
@@ -547,6 +553,11 @@ namespace MaterialComponents.MaterialCollections
 		// @property (nonatomic, strong) MDCInkView * _Nullable inkView;
 		[NullAllowed, Export("inkView", ArgumentSemantic.Strong)]
 		MDCInkView InkView { get; set; }
+
+        [Export("initWithFrame:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(CGRect frame);
+
 	}
 
 	[Static]

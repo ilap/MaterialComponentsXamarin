@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShrineXamarin", "samples\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC-Tutorial", "samples\MDC-Tutorial\MDC-Tutorial.csproj", "{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pesto", "samples\Pesto\Pesto.csproj", "{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,18 @@ Global
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.Build.0 = Debug|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|Any CPU.Build.0 = Release|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|iPhone.Build.0 = Release|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		version = 34.0.1

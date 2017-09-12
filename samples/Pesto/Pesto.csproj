@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{E98F86E6-DB5D-48AE-A6F1-B2919D89C87C}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Pesto</RootNamespace>
+    <AssemblyName>Pesto</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>34.0.1</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>29225</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>23877</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\pesto_app_76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\pesto_app_76_2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\pesto_app_icon_176.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\pesto_app_icon_60_2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\pesto_app_icon_60_3x.png" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\ic_keyboard_arrow_left_white_1x_ios_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\ic_keyboard_arrow_left_white_2x_ios_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\Back.imageset\ic_keyboard_arrow_left_white_3x_ios_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\Settings.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Settings.imageset\ic_settings_white_1x_ios_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\Settings.imageset\ic_settings_white_2x_ios_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\Settings.imageset\ic_settings_white_3x_ios_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\PestoLogoSmall.imageset\pesto_text.pdf" />
+    <ImageAsset Include="Assets.xcassets\PestoLogoLarge.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PestoLogoLarge.imageset\pesto_logo_large.pdf" />
+    <ImageAsset Include="Assets.xcassets\ic_trending_up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_trending_up.imageset\ic_trending_up.png" />
+    <ImageAsset Include="Assets.xcassets\ic_trending_up.imageset\ic_trending_up_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_trending_up.imageset\ic_trending_up_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite.imageset\ic_favorite.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite.imageset\ic_favorite_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite.imageset\ic_favorite_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Model\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PestoViewController.cs" />
+    <Compile Include="Views\PestoCollectionViewController.cs" />
+    <Compile Include="Model\PestoData.cs" />
+    <Compile Include="Views\PestoCardCollectionViewCell.cs" />
+    <Compile Include="Service\PestoRemoteImageService.cs" />
+    <Compile Include="Views\PestoSettingsViewController.cs" />
+    <Compile Include="Views\PestoDetailViewController.cs" />
+    <Compile Include="Views\PestoRecipeCardView.cs" />
+    <Compile Include="Views\PestoSplitView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MaterialComponents\MaterialComponents.csproj">
+      <Project>{F888B10B-1D2E-44F5-AAE9-3335566E67A7}</Project>
+      <Name>MaterialComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
