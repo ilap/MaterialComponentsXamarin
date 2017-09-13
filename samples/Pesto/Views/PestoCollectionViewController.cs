@@ -11,6 +11,9 @@ using System.Drawing;
 using CoreGraphics;
 using System.Linq;
 using System.Security.Policy;
+using MaterialComponents.MaterialShadowLayer;
+using MaterialComponents.ShadowElevation;
+using CoreAnimation;
 
 namespace Pesto.Views
 {
@@ -18,8 +21,8 @@ namespace Pesto.Views
     public class PestoCollectionViewController : MDCCollectionViewController
     {
         static nfloat AnimationDuration = 0.33f;
-        static nfloat CellHeigth = 330f;
-        static nfloat DefaultHeaderHeigth = 240f;
+        static nfloat CellHeight = 330f;
+        static nfloat DefaultHeaderHeight = 240f;
         static nfloat Inset = 5f;
         static nfloat SmallHeaderHeight = 76f;
 
@@ -30,13 +33,47 @@ namespace Pesto.Views
         UIView logoSmallView;
         UIView logoView;
 
+        public MDCFlexibleHeaderShadowIntensityChangeBlock ShadowDelegate;
+
 
         static readonly NSString cellId = new NSString("PestoCardCollectionViewCell");
 
         nfloat scrollOffsetY;
-        public MDCFlexibleHeaderContainerViewController flexHeaderContainerVC;
-
         public DidSelectCellDelegate Delegate;
+
+
+        MDCFlexibleHeaderContainerViewController flexHeaderContainerVC;
+        public MDCFlexibleHeaderContainerViewController FlexHeaderContainerVC
+        {
+            get => flexHeaderContainerVC;
+            set
+            {
+                this.flexHeaderContainerVC = value;
+                var headerView = this.flexHeaderContainerVC.HeaderViewController.HeaderView;
+                headerView.TrackingScrollView = this.CollectionView;
+                headerView.MaximumHeight = DefaultHeaderHeight;
+                headerView.MinimumHeight = SmallHeaderHeight;
+                headerView.AddSubview(PestoHeaderView());
+
+                var shadowLayer = MDCShadowLayer.Create();
+
+                headerView.SetShadowLayer(shadowLayer, this.ShadowIntensityChangeBlock); /*(CALayer layer, nfloat intensity) =>
+                {
+                    var elevation = Elevation.MDCShadowElevationAppBar * intensity;
+                    (layer as MDCShadowLayer).Elevation = elevation;
+                });*/
+            }
+        }
+
+        public void  ShadowIntensityChangeBlock(CALayer layer, nfloat intensity)
+        {
+
+            if (layer is MDCShadowLayer)
+            {
+                var elevation = Elevation.MDCShadowElevationAppBar * intensity;
+                (layer as MDCShadowLayer).Elevation = elevation;
+            }
+        }
 
         [Export("initWithCollectionViewLayout:")]
         public PestoCollectionViewController(UICollectionViewLayout layout) : base (layout)
@@ -55,14 +92,15 @@ namespace Pesto.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Styler.CellStyle = MDCCollectionViewCellStyle.Card;
-            Styler.CellLayoutType = MDCCollectionViewCellLayoutType.Grid;
-            Styler.GridPadding = Inset;
+            var styler = this.Styler;
+            styler.CellStyle = MDCCollectionViewCellStyle.Card;
+            //styler.CellLayoutType = MDCCollectionViewCellLayoutType.Grid;
+            //styler.GridPadding = Inset;
 
             if (View.Frame.Size.Width < View.Frame.Size.Height) {
-                Styler.GridColumnCount = 1;
+                styler.GridColumnCount = 1;
             } else {
-                Styler.GridColumnCount = 2;
+                styler.GridColumnCount = 2;
             }
         }
 
@@ -99,6 +137,11 @@ namespace Pesto.Views
             Console.WriteLine("DidSelectItemAtIndexPath\n");
         }
 
+        [Export("collectionView:cellHeightAtIndexPath:")]
+        public override nfloat CellHeightAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            return CellHeight;
+        }
         [Export("collectionView:cellForItemAtIndexPath:")]
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
@@ -125,6 +168,7 @@ namespace Pesto.Views
             return cell;
         }
 
+
         public override nint NumberOfSections(UICollectionView collectionView)
         {
             return 1; //pestoData.imageFileNames.Count();
@@ -135,7 +179,8 @@ namespace Pesto.Views
             return pestoData.imageFileNames.Count();
         }
 
-        void CenterHeaderWithSize(CGSize size) {
+        UIView PestoHeaderView()
+        {
             var headerFrame = flexHeaderContainerVC.HeaderViewController.HeaderView.Bounds;
             var pestoHeaderView = new UIView(headerFrame);
 
@@ -163,6 +208,62 @@ namespace Pesto.Views
 
             inkTouchController = new MDCInkTouchController(pestoHeaderView);
             inkTouchController.AddInkView();
+            return pestoHeaderView;
+        }
+
+
+        void CenterHeaderWithSize(CGSize size)
+        {
+            var statusBarHeight = UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+            var width = size.Width;
+
+            var headerFrame = flexHeaderContainerVC.HeaderViewController.HeaderView.Bounds;
+            if (logoView != null & logoSmallView != null)
+            {
+                logoView.Center = new CGPoint(width / 2f, headerFrame.Size.Height / 2f);
+                logoSmallView.Center = new CGPoint(width / 2f,
+                                                   (headerFrame.Size.Height - statusBarHeight) / 2f + statusBarHeight);
+            }
+
+        }
+
+        // MARK: UIScrollViewDelegate
+        public override void Scrolled(UIScrollView scrollView)
+        {
+            //base.Scrolled(scrollView);
+            flexHeaderContainerVC.HeaderViewController.Scrolled(scrollView);
+            scrollOffsetY = scrollView.ContentOffset.Y;
+            if (logoView == null | logoSmallView == null) {
+                return;
+            }
+            CenterHeaderWithSize(View.Frame.Size);
+            logoScale = scrollView.ContentOffset.Y / -DefaultHeaderHeight;
+
+            if (logoScale < 0.5f) {
+                logoScale = 0.5f;
+                UIView.AnimateNotify(AnimationDuration,
+                                     0f,
+                                     UIViewAnimationOptions.CurveEaseOut,
+                                     () =>
+                                     {
+                                         logoView.Layer.Opacity = 0;
+                                         logoSmallView.Layer.Opacity = 1f;
+                                     }, 
+                                     new UICompletionHandler((bool finished) => {}));
+            } else {
+                UIView.AnimateNotify(AnimationDuration,
+                                     0f,
+                                     UIViewAnimationOptions.CurveEaseOut,
+                                     () =>
+                                     {
+                                         logoView.Layer.Opacity = 1f;
+                                         logoSmallView.Layer.Opacity = 0;
+                                     },
+                                     new UICompletionHandler((bool finished) => { }));                
+            }
+
+            logoView.Transform = CGAffineTransform.MakeScale(logoScale, logoScale);
+
         }
 
     }

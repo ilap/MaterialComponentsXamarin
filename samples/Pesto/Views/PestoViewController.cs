@@ -34,8 +34,10 @@ namespace Pesto.Views
             var result = new PestoViewController(collectionVC);
 
             result.collectionViewController = collectionVC;
-            result.collectionViewController.flexHeaderContainerVC = result;
+            result.collectionViewController.ShadowDelegate = collectionVC.ShadowIntensityChangeBlock;
+            result.collectionViewController.FlexHeaderContainerVC = result;
             result.collectionViewController.Delegate = result.DidSelectCell;
+                  
 
             result.appBar = new MDCAppBar();
             result.AddChildViewController(result.appBar.HeaderViewController);

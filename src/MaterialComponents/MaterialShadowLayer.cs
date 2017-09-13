@@ -76,5 +76,9 @@ namespace MaterialComponents.MaterialShadowLayer
 		// @property (getter = isShadowMaskEnabled, assign, nonatomic) BOOL shadowMaskEnabled;
 		[Export("shadowMaskEnabled")]
 		bool ShadowMaskEnabled { [Bind("isShadowMaskEnabled")] get; set; }
+
+        [Export("initWithLayer:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(CALayer other);
 	}
 }

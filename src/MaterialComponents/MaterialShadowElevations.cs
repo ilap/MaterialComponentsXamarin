@@ -24,11 +24,11 @@
 using System;
 using Foundation;
 
-namespace MaterialComponents.MaterialMaterialShadowElevations
+namespace MaterialComponents.ShadowElevation
 {
     [Static]
     //[Verify(ConstantsInterfaceAssociation)]
-    partial interface Constants
+    partial interface Elevation
     {
         // extern const CGFloat MDCShadowElevationAppBar;
         [Field("MDCShadowElevationAppBar", "__Internal")]
