@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MaterialComponents.MaterialAppBar;
 using MaterialComponents.MaterialFlexibleHeader;
 using UIKit;
@@ -58,7 +58,7 @@ namespace Pesto.Views
             // Note: this .ctor should not contain any initialization logic.
         }
 
-        public PestoViewController()
+        public PestoViewController() : base ()
         {
 
         }
@@ -86,6 +86,92 @@ namespace Pesto.Views
 
         }
 
+        public void DidSelectCell(PestoCardCollectionViewCell cell, Action completion)
+        {
+            Console.Write("Ooops!");
+            zoomableView.Frame = new CGrect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
+            cell.Frame.Size.Width, cell.Frame.Size.Height - 50f);
+
+            zoomableCardView.Frame = new CGrect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
+            cell.Frame.Size.Width, cell.Frame.Size.Height);
+
+            DispatchQueue.MainQueue.DispatchAsync(() => {
+                zoomableView.image = cell.image;
+
+                UIView.AnimateNotify(PestoDetail.AnimationDuration,
+                0,
+                UIViewAnimationOptions.CurveEaseOut,
+                () =>
+                {
+                     var quantumEaseInOut = CAMediaTimingFunction.mdc_functionWithType(MDCAnimationTimingFunction.EaseInOut);
+                    CATransation.AnimationTimingFunction = quantumEaseInOut;
+                    var zoomFrame = new CGRect(0, 0, View.Bounds.Size.Width, 320f);
+                    zoomableView.Frame = zoomFrame;
+                    zoomableCardView.Frame = View.Bounds;
+                }, 
+                new UICompletionHandler((bool finished) => {
+                    var detailVC = new PestoDetailViewController();
+                    detailVC.imageView.image = cell.image;
+                    detailVC.Title = cell.Title;
+                    detailVC.descText = cell.descText;
+                    detailVC.iconImageName = cell.iconImageName;
+                    
+                    PresentViewController(detailVC, no, () => {
+                        this.zoomableView.Frame = CGRect.Empty;
+                        this.zoomableCardView.Frame = CGRect.Empty;
+                        completion();
+                        
+                    });
+                }));
+
+            });
+
+        }
+
+        public IUIViewControllerAnimatedTransitioning GetAnimationControllerForPresentedController(UIViewController presented, UIViewController presenting, UIViewController source)
+        {
+            return null;
+        }
+
+        public IUIViewControllerAnimatedTransitioning GetAnimationControllerForDismissedController(UIViewController dismissed)
+        {
+            return this;
+        }
+
+        public void AnimateTransition(IUIViewControllerContextTransitioning transitionContext)
+        {
+            var fromController = transitionContext.GetViewControllerForKey(
+                UITransitionContext.FromViewControllerKey);
+            var toController = transitionContext.GetViewControllerForKey(
+                UITransitionContext.ToViewControllerKey);
+
+            if (fromController is PestoDetailViewController &
+                toController is PestoViewController)
+            {
+                CGRect detailFrame = fromController.View.Frame;
+                detailFrame.Y = this.View.Frame.Size.Height;
+
+
+                UIView.AnimateNotify(TransitionDuration(transitionContext),
+                                     0.5f,
+                                     UIViewAnimationOptions.CurveEaseIn,
+                                     () => {
+                                            fromController.View.Frame = detailFrame;
+                                     }, new UICompletionHandler((bool finished) => {
+                                         if (fromController.View != null)
+                                                {
+                                                    fromController.View.RemoveFromSuperview();
+                                                }
+                                                transitionContext.CompleteTransition(true);
+                                        }));
+
+            }
+        }
+
+        public double TransitionDuration(IUIViewControllerContextTransitioning transitionContext)
+        {
+            return 0.2;
+        }
 
         public void DidSelectSettings(object sender, EventArgs args)
         {
@@ -118,71 +204,6 @@ namespace Pesto.Views
         public void CloseViewController(object sender, EventArgs args)
         {
             DismissViewController(true, null);
-        }
-
-        public void DidSelectCell(PestoCardCollectionViewCell cell, Action completion)
-        {
-            //zoomableView.Frame = new 
-            Console.Write("Fuck!");
-
-        }
-
-       /* public class PestoAnimator : IUIViewControllerAnimatedTransitioning
-        {
-            public bool IsPresentation = true;
-            CGRect frame = CGRect.Empty;
-            PestoViewController controller;
-
-            public PestoAnimator(PestoViewController controller, CGRect frame)
-            {
-                this.controller = controller;
-                this.frame = frame;
-            }*/
-
-            public double TransitionDuration(IUIViewControllerContextTransitioning transitionContext)
-            {
-                return 0.2;
-            }
-
-            public void AnimateTransition(IUIViewControllerContextTransitioning transitionContext)
-            {
-                var fromController = transitionContext.GetViewControllerForKey(
-                    UITransitionContext.FromViewControllerKey);
-                var toContreoller = transitionContext.GetViewControllerForKey(
-                    UITransitionContext.ToViewControllerKey);
-
-                if (fromController is PestoDetailViewController &
-                    toContreoller is PestoViewController)
-                {
-                    CGRect detailFrame = fromController.View.Frame;
-                    detailFrame.Y = this.View.Frame.Size.Height;
-
-
-                UIView.AnimateNotify(TransitionDuration(transitionContext),
-                                     0.5f,
-                                     UIViewAnimationOptions.CurveEaseIn,
-                                     () => {
-                                            fromController.View.Frame = detailFrame;
-                                     }, new UICompletionHandler((bool finished) => {
-                                         if (fromController.View != null)
-                                                {
-                                                    fromController.View.RemoveFromSuperview();
-                                                }
-                                                transitionContext.CompleteTransition(true);
-                                        }));
-
-                }
-            }
-        /*}*/
-
-        public IUIViewControllerAnimatedTransitioning GetAnimationControllerForPresentedController(UIViewController presented, UIViewController presenting, UIViewController source)
-        {
-            return null;
-        }
-
-        public IUIViewControllerAnimatedTransitioning GetAnimationControllerForDismissedController(UIViewController dismissed)
-        {
-            return this;
         }
     }
 }
