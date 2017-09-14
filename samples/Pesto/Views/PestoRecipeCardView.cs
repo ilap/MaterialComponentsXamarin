@@ -14,10 +14,10 @@ namespace Pesto.Views
     }
     public class PestoRecipeCardView : UIView
     {
-        String title;
-        String iconImageName;
-        String descText;
-        UILabel titleLabel;
+        private String title;
+        private UILabel titleLabel;
+        private String iconImageName;
+        private String descText;
 
         public String Title
         {
@@ -25,7 +25,7 @@ namespace Pesto.Views
             set
             {
                 title = value;
-                titleLabel.Text = title;
+                TitleLabel.Text = title;
             }
         }
 
@@ -54,7 +54,10 @@ namespace Pesto.Views
                                              PestoDetailConstants.DescTextHeight);
             }
         }
-        public UILabel TitleLabel;
+        public UILabel TitleLabel {
+            get => titleLabel;
+            set => titleLabel = value;
+        }
 
 
 
@@ -71,7 +74,13 @@ namespace Pesto.Views
         UILabel labelDesc;
         UIStackView stackView;
 
-        public PestoRecipeCardView() : base()
+        /*public PestoRecipeCardView() : base()
+        {
+            BackgroundColor = UIColor.White;
+            CommonInit();
+        }*/
+
+        public PestoRecipeCardView(CGRect frame) : base(frame)
         {
             BackgroundColor = UIColor.White;
             CommonInit();
@@ -95,11 +104,11 @@ namespace Pesto.Views
             iconImageView.Frame = new CGRect(0, 1f, iconImageView.Frame.Size.Width,
                                              iconImageView.Frame.Size.Height);
 
-            titleLabel = new UILabel();
-            titleLabel.Font = MDCTypography.HeadlineFont;
-            titleLabel.Alpha = MDCTypography.HeadlineFontOpacity;
-            titleLabel.TextColor = UIColor.FromWhiteAlpha(0, 0.87f);
-            titleLabel.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetailConstants.SplitWidth,
+            TitleLabel = new UILabel();
+            TitleLabel.Font = MDCTypography.HeadlineFont;
+            TitleLabel.Alpha = MDCTypography.HeadlineFontOpacity;
+            TitleLabel.TextColor = UIColor.FromWhiteAlpha(0, 0.87f);
+            TitleLabel.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetailConstants.SplitWidth,
                                           MDCTypography.Display1Font.PointSize + 4f);
 
             labelDesc = new UILabel();

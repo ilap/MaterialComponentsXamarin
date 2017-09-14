@@ -26,6 +26,7 @@ namespace Pesto.Views
         static nfloat Inset = 5f;
         static nfloat SmallHeaderHeight = 76f;
 
+        MDCShadowLayer shadowLayer;
         nfloat logoScale;
         MDCInkTouchController inkTouchController;
         PestoData pestoData;
@@ -38,7 +39,7 @@ namespace Pesto.Views
 
         static readonly NSString cellId = new NSString("PestoCardCollectionViewCell");
 
-        nfloat scrollOffsetY;
+        public nfloat scrollOffsetY;
         public DidSelectCellDelegate Delegate;
 
 
@@ -55,21 +56,25 @@ namespace Pesto.Views
                 headerView.MinimumHeight = SmallHeaderHeight;
                 headerView.AddSubview(PestoHeaderView());
 
-                var shadowLayer = MDCShadowLayer.Create();
+                shadowLayer = new MDCShadowLayer();
+                headerView.ShadowLayer = shadowLayer;
+                headerView.SetShadowLayer(shadowLayer, ShadowDelegate);
 
-                headerView.SetShadowLayer(shadowLayer, this.ShadowIntensityChangeBlock); /*(CALayer layer, nfloat intensity) =>
-                {
-                    var elevation = Elevation.MDCShadowElevationAppBar * intensity;
-                    (layer as MDCShadowLayer).Elevation = elevation;
-                });*/
+                // MAR: Delegated Example - Using delegate
+                // headerView.SetShadowLayer(shadowLayer, ShadowDelegate);
+
+                // MAR: Delegated Example - using lambda
+                //headerView.SetShadowLayer(shadowLayer, (CALayer layer, nfloat intensity) =>
+                //{
+                //    var elevation = Elevation.MDCShadowElevationAppBar ; // * intensity;
+                //    (layer as MDCShadowLayer).Elevation = elevation;
+                //});
             }
         }
 
         public void  ShadowIntensityChangeBlock(CALayer layer, nfloat intensity)
         {
-
-            if (layer is MDCShadowLayer)
-            {
+            if (layer is MDCShadowLayer) {
                 var elevation = Elevation.MDCShadowElevationAppBar * intensity;
                 (layer as MDCShadowLayer).Elevation = elevation;
             }
@@ -94,8 +99,8 @@ namespace Pesto.Views
             base.ViewDidLoad();
             var styler = this.Styler;
             styler.CellStyle = MDCCollectionViewCellStyle.Card;
-            //styler.CellLayoutType = MDCCollectionViewCellLayoutType.Grid;
-            //styler.GridPadding = Inset;
+            styler.CellLayoutType = MDCCollectionViewCellLayoutType.Grid;
+            styler.GridPadding = Inset;
 
             if (View.Frame.Size.Width < View.Frame.Size.Height) {
                 styler.GridColumnCount = 1;

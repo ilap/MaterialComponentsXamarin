@@ -2,22 +2,26 @@ using System;
 using UIKit;
 using MaterialComponents.MaterialAppBar;
 using MaterialComponents.MaterialFlexibleHeader;
+using CoreGraphics;
+using CoreFoundation;
+using CoreAnimation;
+using MaterialComponents.MaterialAnimationTiming;
+using MaterialComponents;
 
 namespace Pesto.Views
 {
     public static class PestoDetail {
-        public static nfloat AnimationDelay = 1f;
-        public static nfloat AnimationDuration = 0.33f;
-        public static nfloat FlexibleHeaderLandscapeHeight { get => 160f };
-        public static nfloat FlexibleHeaderMinHeight { get => 320f };
-        public static nfloat RecipeCardHeight { get => 400f };
-        
+        public static nfloat AnimationDelay { get => 1f; }
+        public static nfloat AnimationDuration { get => 0.33f; }
+        public static nfloat FlexibleHeaderLandscapeHeight { get => 160f; }
+        public static nfloat FlexibleHeaderMinHeight { get => 320f; }
+        public static nfloat RecipeCardHeight { get => 400f; }
     }
 
     public class PestoDetailViewController : UIViewController, IUIScrollViewDelegate
     {
         public UIScrollView scrollView;
-        public UIScrollView imageView;
+        public UIImageView imageView;
         public String descText;
         public String iconImageName;
 
@@ -34,13 +38,15 @@ namespace Pesto.Views
             fhvc = new MDCFlexibleHeaderViewController();
             AddChildViewController(fhvc);
 
-            var imageViewFrame = fhvc.HeaderView.Bounds;
-            imageView = new UIIMageView(imageViewFrame);
-            imageView.ContentMode = UIViewContentModeScale.AspectFill;
-            imageView.AutoResizingMask = UIViewAutoresizing.FlexibleWidth | 
-            UIViewAutoresizing.FlexibleHeight;
+            CGRect imageViewFrame = fhvc.HeaderView.Bounds;
 
-            fhvc.HeaderView.AddSubView(imageView);
+            imageView = new UIImageView(imageViewFrame);
+                
+            imageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+            imageView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth |
+                                        UIViewAutoresizing.FlexibleHeight;
+
+            fhvc.HeaderView.AddSubview(imageView);
 
             appBar = new MDCAppBar();
             AddChildViewController(appBar.HeaderViewController);
@@ -48,8 +54,9 @@ namespace Pesto.Views
             appBar.HeaderViewController.HeaderView.BackgroundColor = UIColor.Clear;
             appBar.NavigationBar.TintColor = UIColor.White;
 
-            var backButton = new UIBarButtonItem(icon, UIBarButtonItemStyle.Done, DidTapBack);
-            var backImage = new UIImage.FromBundle("Back");
+            var backButton = new UIBarButtonItem("", UIBarButtonItemStyle.Done, DidTapBack);
+
+            var backImage = UIImage.FromBundle("Back");
             backButton.Image = backImage;
             NavigationItem.LeftBarButtonItem = backButton;
 
@@ -69,32 +76,33 @@ namespace Pesto.Views
 
             scrollView = new UIScrollView(View.Bounds);
             scrollView.BackgroundColor = UIColor.White;
-            scrollView.AutoResizingMask = UIViewAutoresizing.FlexibleWidth | 
+            scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth |
             UIViewAutoresizing.FlexibleHeight;
-            View.AddSubView(scrollView);
+            
+            View.AddSubview(scrollView);
 
             scrollView.Delegate = this;
             fhvc.HeaderView.TrackingScrollView = scrollView;
             fhvc.HeaderView.ClipsToBounds = true;
 
             fhvc.View.Frame = View.Bounds;
-            View.AddSubView(fhvc.View);
+            View.AddSubview(fhvc.View);
 
-            fhvc.MoveToParentViewController();
+            fhvc.DidMoveToParentViewController(this);
 
 
             var bottomFrame = new CGRect(0, 0, View.Bounds.Size.Width,
-            PestoDetail.lRecipeCardHeight);
+            PestoDetail.RecipeCardHeight);
 
             bottomView = new PestoRecipeCardView(bottomFrame);
 
-            bottomView.descText = this.descText;
+            bottomView.DescText = this.descText;
             bottomView.Title = this.Title;
-            bottomView.iconImageName = this.iconImageName;
+            bottomView.IconImageName = this.iconImageName;
             bottomView.Alpha = 0;
-            bottomView..AutoResizingMask = UIViewAutoresizing.FlexibleWidth | 
+            bottomView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | 
             UIViewAutoresizing.FlexibleHeight;
-            scrollView.AddSubView(bottomView);
+            scrollView.AddSubview(bottomView);
 
             DispatchQueue.MainQueue.DispatchAsync(() => {
                 UIView.AnimateNotify(PestoDetail.AnimationDuration,
@@ -102,18 +110,18 @@ namespace Pesto.Views
                 UIViewAnimationOptions.CurveEaseOut,
                 () =>
                 {
-                     var quantumEaseInOut = CAMediaTimingFunction.mdc_functionWithType(MDCAnimationTimingFunction.EaseInOut);
-                    CATransation.AnimationTimingFunction = quantumEaseInOut;
+                    var quantumEaseInOut = MDC_CAMediaTimingFunction.Mdc_functionWithType(MDCAnimationTimingFunction.EaseInOut);
+                    CATransaction.AnimationTimingFunction = quantumEaseInOut;
                     this.bottomView.Alpha = 1f;
                 }, 
                 new UICompletionHandler((bool finished) => {}));
             });
 
-            appBar.AddSubViewsToParent();
+            appBar.AddSubviewsToParent();
 
             // Only display title in the bottom view with no title in the app bar.
             bottomView.Title = Title;
-            appBar.NavigationBar.Title = "";
+            appBar.NavigationBar.Title = "TEST";
 
         }
 
@@ -138,9 +146,10 @@ namespace Pesto.Views
             }
         }
 
-        public override void LayoutSubviews()
+
+        public override void ViewDidLayoutSubviews()
         {
-            base.LayoutSubviews();
+            base.ViewDidLayoutSubviews();
             scrollView.ContentSize = new CGSize(bottomView.Bounds.Size.Width,
             PestoDetail.RecipeCardHeight);
         }
@@ -156,8 +165,8 @@ namespace Pesto.Views
         }
         
         // MARK: UIScrollViewDelegate
-        public override void Scrolled(UIScrollView scrollView) {
-            var contentOffsetY = -scrollView.contentOffset.Y;
+        public void Scrolled(UIScrollView scrollView) {
+            var contentOffsetY = -scrollView.ContentOffset.Y;
             if (contentOffsetY < PestoDetail.FlexibleHeaderMinHeight) {
                 contentOffsetY = PestoDetail.FlexibleHeaderMinHeight;
             }

@@ -17,16 +17,23 @@ namespace Pesto.Views
             var height = frame.Size.Height;
 
             this.leftView = new UIView(new CGRect(0, 1f, leftWidth, height));
-            this.leftView.Add(leftView);
+            if (leftView != null) {
+                this.leftView.AddSubview(leftView);
+            }
             AddSubview(this.leftView);
 
             var rightFrame = new CGRect(leftWidth, 0, this.Frame.Size.Width - leftWidth,
                                        height);
             this.rightView = new UIView(rightFrame);
-            this.rightView.AddSubview(rightView);
+
+            if (rightView != null)
+            {
+                this.rightView.AddSubview(rightView);
+            }
+
             this.rightView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth |
                 UIViewAutoresizing.FlexibleHeight;
-            AddSubview(rightView);
+            AddSubview(this.rightView);
         }
 
         public override CGSize IntrinsicContentSize

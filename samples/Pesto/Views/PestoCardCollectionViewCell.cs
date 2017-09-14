@@ -108,6 +108,7 @@ namespace Pesto.Views
             iconImageView.Image = icon;
 
             imageService.FetchImageAndThumbNail(imageUrl, (UIImage image, UIImage thumbnailImage) => {
+                this.image = image;
                 DispatchQueue.MainQueue.DispatchSync(() => {
                     // FIXME: ThumbnailImage does not work
                     this.thumbnailImageView.Image = image;

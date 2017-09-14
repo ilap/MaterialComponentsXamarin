@@ -4,6 +4,10 @@ using MaterialComponents.MaterialFlexibleHeader;
 using UIKit;
 using Foundation;
 using CoreGraphics;
+using CoreFoundation;
+using CoreAnimation;
+using MaterialComponents;
+using MaterialComponents.MaterialAnimationTiming;
 
 namespace Pesto.Views
 {
@@ -88,44 +92,41 @@ namespace Pesto.Views
 
         public void DidSelectCell(PestoCardCollectionViewCell cell, Action completion)
         {
-            Console.Write("Ooops!");
-            zoomableView.Frame = new CGrect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
+            Console.Write("Ooops! Sorry:)");
+            zoomableView.Frame = new CGRect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
             cell.Frame.Size.Width, cell.Frame.Size.Height - 50f);
 
-            zoomableCardView.Frame = new CGrect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
+            zoomableCardView.Frame = new CGRect(cell.Frame.X, cell.Frame.Y - collectionViewController.scrollOffsetY,
             cell.Frame.Size.Width, cell.Frame.Size.Height);
 
             DispatchQueue.MainQueue.DispatchAsync(() => {
-                zoomableView.image = cell.image;
-
+                zoomableView.Image = cell.image;
                 UIView.AnimateNotify(PestoDetail.AnimationDuration,
                 0,
                 UIViewAnimationOptions.CurveEaseOut,
                 () =>
                 {
-                     var quantumEaseInOut = CAMediaTimingFunction.mdc_functionWithType(MDCAnimationTimingFunction.EaseInOut);
-                    CATransation.AnimationTimingFunction = quantumEaseInOut;
+                    var quantumEaseInOut = MDC_CAMediaTimingFunction.Mdc_functionWithType(MDCAnimationTimingFunction.EaseInOut);
+                    CATransaction.AnimationTimingFunction = quantumEaseInOut;
                     var zoomFrame = new CGRect(0, 0, View.Bounds.Size.Width, 320f);
                     zoomableView.Frame = zoomFrame;
                     zoomableCardView.Frame = View.Bounds;
                 }, 
                 new UICompletionHandler((bool finished) => {
                     var detailVC = new PestoDetailViewController();
-                    detailVC.imageView.image = cell.image;
-                    detailVC.Title = cell.Title;
+                    detailVC.imageView.Image = cell.image;
+                    detailVC.Title = cell.title;
                     detailVC.descText = cell.descText;
                     detailVC.iconImageName = cell.iconImageName;
                     
-                    PresentViewController(detailVC, no, () => {
+                    PresentViewController(detailVC, false, () => {
                         this.zoomableView.Frame = CGRect.Empty;
                         this.zoomableCardView.Frame = CGRect.Empty;
                         completion();
                         
                     });
                 }));
-
             });
-
         }
 
         public IUIViewControllerAnimatedTransitioning GetAnimationControllerForPresentedController(UIViewController presented, UIViewController presenting, UIViewController source)
