@@ -62,15 +62,21 @@ copyright Google Inc. and licensed under
 
  - **[Raleway at Google Fonts](https://www.google.com/fonts/specimen/Raleway)**: copyright Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida and by Igino Marini, and licensed [Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
 
+
+This software contains demo code, samples, examples and tutorials derived from the Google Inc.'s 
+Material Components for iOS project and licensed under Apache 2.0 without a NOTICE file.
+
+Xamarin Binding of Material Components for iOS uses:
+ - the Material Components for iOS and its dependends, copyright Google Inc. and licensed under Apache 2.0 without a NOTICE file.
+ - the Material Design icons, copyright Google Inc. and licensed under CC BY 4.0.
+ - the Roboto font, copyright 2011 Google Inc. and licensed under Apache 2.0 without a NOTICE file.
+
 For extra information about licenses, you can see it at the dependency repositories.
 
 # License #
 
-The MIT License (MIT)
-
-
+Xamarin Binding of MaterialComponents for iOS
 Copyright (c) 2017 The Material Components for iOS Xamarin Binding Authors.
-All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
