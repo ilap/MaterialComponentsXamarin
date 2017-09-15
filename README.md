@@ -4,7 +4,7 @@
   <br>
   <a href="http://www.amitmerchant.com/electron-markdownify"><img  src="arts/MDC.png" width="128" ></a>
   <br>
-  Xamarin.iOS Binding for Material Components for iOS.
+  Material Components for iOS binding for Xamarin.iOS.
   <br>
 </h1>
 
@@ -13,7 +13,7 @@
 
 <table>
 <tr>
-<td><p>C# binding of the <a href="https://github.com/material-components/material-components-ios" target="_blank" >Materialcomponents for iOS</a> the Modular and customisable <a href="https://material.io/" target="_blank" >Material Design UI components</a> for IOS.<br>Xamarin binding of Material Components for iOS and the adopted sample, demo and example iOS apps are written in C#.<br><br>The Xamarin binding versions follow the relevant MaterialComponents for iOS's versions. e.g. MaterialComponents for iOS v31.0.0 --> MaterialComponentBinding v31.0.0.</p>
+<td><p>C# binding of the <a href="https://github.com/material-components/material-components-ios" target="_blank" >Material Components for iOS</a> the Modular and customisable <a href="https://material.io/" target="_blank" >Material Design UI components</a> for IOS.<br>Xamarin binding of Material Components for iOS and the adopted sample, demo and example iOS apps are written in C#.<br><br>The Xamarin binding versions follow the relevant MaterialComponents for iOS's versions. e.g. MaterialComponents for iOS v31.0.0 --> MaterialComponentBinding v31.0.0.</p>
 </td>
 </tr>
 </table>
@@ -25,7 +25,7 @@
 
 ## Demos
 
-These apps above were translated from the original Siwft/ObjC sample apps to C# using Xamarin.iOS bindigs.
+These apps above were translated from the original Siwft/ObjC sample apps to C# using Material Components for iOSes' Xamarin.iOS bindigs.
 Click on any image for further details.
 
 ## Current Version
