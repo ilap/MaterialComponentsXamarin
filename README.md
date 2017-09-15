@@ -26,10 +26,9 @@
 
 Click on any image for further details.
 
-
 <p align="center">
 <a href="samples/"><img  src="arts/Shrine.gif" width="320px"></a>
-<a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="320px"></a>
+<a href="samples/"><img  src="arts/Pesto.gif" width="320px"></a>
 <a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="320px"></a>
 </p>
 
