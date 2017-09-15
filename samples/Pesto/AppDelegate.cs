@@ -21,7 +21,9 @@ namespace Pesto
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            
+            UINavigationBar.Appearance.BarTintColor = UIColor.White;
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes { TextColor = UIColor.White });
+
             Window.MakeKeyAndVisible();
 
             var iconFrame = new CGRect(0, 0, 32, 32);

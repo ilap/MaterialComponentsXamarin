@@ -13,7 +13,7 @@ namespace Pesto.Views
         {
             originalSize = frame.Size;
 
-            var leftWidth = PestoDetailConstants.SplitWidth;
+            var leftWidth = PestoDetail.SplitWidth;
             var height = frame.Size.Height;
 
             this.leftView = new UIView(new CGRect(0, 1f, leftWidth, height));

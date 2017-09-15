@@ -6,12 +6,18 @@ using MaterialComponents.MaterialTypography;
 
 namespace Pesto.Views
 {
-    public static class PestoDetailConstants {
-            // private variables
-        public static nfloat DescTextHeight = 140;
-        public static nfloat DetailPadding = 28;
-        public static nfloat SplitWidth = 64;
+    public static class PestoDetail {
+        public static nfloat DescTextHeight { get => 140f; }
+        public static nfloat DetailPadding { get => 28f; }
+        public static nfloat SplitWidth { get => 64; }
+
+        public static nfloat AnimationDelay { get => 0.1f; }
+        public static nfloat AnimationDuration { get => 0.33f; }
+        public static nfloat FlexibleHeaderLandscapeHeight { get => 160f; }
+        public static nfloat FlexibleHeaderMinHeight { get => 320f; }
+        public static nfloat RecipeCardHeight { get => 400f; }
     }
+
     public class PestoRecipeCardView : UIView
     {
         private String title;
@@ -35,7 +41,28 @@ namespace Pesto.Views
                 iconImageName = value;
                 var iconFrame = new CGRect(0, 0, 32, 32);
                 // FIXME: generate icons.
-                var icon = UIImage.FromBundle("ic_home");
+                var icon = UIImage.FromBundle("ic_format_color_fill");
+                if (iconImageName == "Main")
+                {
+                    icon = UIImage.FromBundle("ic_format_color_fill");
+                }
+                else if (iconImageName == "Meat")
+                {
+                    icon = UIImage.FromBundle("ic_ac_unit");
+                }
+                else if (iconImageName == "Spicy")
+                {
+                    icon = UIImage.FromBundle("ic_whatshot");
+                }
+                else if (iconImageName == "Timer")
+                {
+                    icon = UIImage.FromBundle("ic_alarm");
+                }
+                else if (iconImageName == "Veggie")
+                {
+                    icon = UIImage.FromBundle("ic_filter_vintage");
+                }
+
                 iconImageView.Image = icon;
             }
         }
@@ -50,16 +77,14 @@ namespace Pesto.Views
                 descAttrString.AddAttribute(UIStringAttributeKey.ParagraphStyle, descParagraphStyle,
                                     new NSRange(0, descAttrString.Length));
                 labelDesc.AttributedText = descAttrString;
-                labelDesc.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetailConstants.SplitWidth,
-                                             PestoDetailConstants.DescTextHeight);
+                labelDesc.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetail.SplitWidth,
+                                             PestoDetail.DescTextHeight);
             }
         }
         public UILabel TitleLabel {
             get => titleLabel;
             set => titleLabel = value;
         }
-
-
 
         CGRect contentViewFrame;
         UIImageView iconImageView;
@@ -87,9 +112,9 @@ namespace Pesto.Views
         }
 
         void CommonInit() {
-            contentViewFrame = new CGRect(PestoDetailConstants.DetailPadding, PestoDetailConstants.DetailPadding,
-                                          Frame.Size.Width - PestoDetailConstants.DetailPadding * 2f,
-                                          Frame.Size.Height - PestoDetailConstants.DetailPadding * 2f);
+            contentViewFrame = new CGRect(PestoDetail.DetailPadding, PestoDetail.DetailPadding,
+                                          Frame.Size.Width - PestoDetail.DetailPadding * 2f,
+                                          Frame.Size.Height - PestoDetail.DetailPadding * 2f);
 
             var contentView = new UIView(contentViewFrame);
 
@@ -108,7 +133,7 @@ namespace Pesto.Views
             TitleLabel.Font = MDCTypography.HeadlineFont;
             TitleLabel.Alpha = MDCTypography.HeadlineFontOpacity;
             TitleLabel.TextColor = UIColor.FromWhiteAlpha(0, 0.87f);
-            TitleLabel.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetailConstants.SplitWidth,
+            TitleLabel.Frame = new CGRect(0, 0, contentViewFrame.Size.Width - PestoDetail.SplitWidth,
                                           MDCTypography.Display1Font.PointSize + 4f);
 
             labelDesc = new UILabel();
@@ -185,7 +210,7 @@ namespace Pesto.Views
                                                     TitleLabel);
 
             var splitViewDescFrame = new CGRect(0, 0, contentViewFrame.Size.Width,
-                                                PestoDetailConstants.DescTextHeight);
+                                                PestoDetail.DescTextHeight);
             var splitViewDesc = new PestoSplitView(splitViewDescFrame, null,
                                                labelDesc);
             
@@ -196,7 +221,7 @@ namespace Pesto.Views
             var splitView3 = new PestoSplitView(splitViewRect, amount3, ingredient3);
             var splitView4 = new PestoSplitView(splitViewRect, amount4, ingredient4);
 
-            var stackFrame = new CGRect(PestoDetailConstants.DetailPadding, 0, Bounds.Size.Width - PestoDetailConstants.DetailPadding * 2f,
+            var stackFrame = new CGRect(PestoDetail.DetailPadding, 0, Bounds.Size.Width - PestoDetail.DetailPadding * 2f,
                                         Bounds.Size.Height);
 
             stackView = new UIStackView(stackFrame);

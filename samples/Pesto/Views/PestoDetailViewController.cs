@@ -10,14 +10,6 @@ using MaterialComponents;
 
 namespace Pesto.Views
 {
-    public static class PestoDetail {
-        public static nfloat AnimationDelay { get => 1f; }
-        public static nfloat AnimationDuration { get => 0.33f; }
-        public static nfloat FlexibleHeaderLandscapeHeight { get => 160f; }
-        public static nfloat FlexibleHeaderMinHeight { get => 320f; }
-        public static nfloat RecipeCardHeight { get => 400f; }
-    }
-
     public class PestoDetailViewController : UIViewController, IUIScrollViewDelegate
     {
         public UIScrollView scrollView;
@@ -121,7 +113,7 @@ namespace Pesto.Views
 
             // Only display title in the bottom view with no title in the app bar.
             bottomView.Title = Title;
-            appBar.NavigationBar.Title = "TEST";
+            appBar.NavigationBar.Title = "";
 
         }
 

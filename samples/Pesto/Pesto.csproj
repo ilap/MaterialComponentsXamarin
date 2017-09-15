@@ -113,6 +113,31 @@
     <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png" />
     <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_whatshot.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_whatshot.imageset\ic_whatshot.png" />
+    <ImageAsset Include="Assets.xcassets\ic_whatshot.imageset\ic_whatshot_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_whatshot.imageset\ic_whatshot_3x.png" />
+    <ImageAsset Include="Assets.xcassets\PestoLogoSmall.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_format_color_fill.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_format_color_fill.imageset\ic_format_color_fill.png" />
+    <ImageAsset Include="Assets.xcassets\ic_format_color_fill.imageset\ic_format_color_fill_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_format_color_fill.imageset\ic_format_color_fill_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_drama.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_drama.imageset\ic_filter_drama.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_drama.imageset\ic_filter_drama_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_drama.imageset\ic_filter_drama_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_ac_unit.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_ac_unit.imageset\ic_ac_unit.png" />
+    <ImageAsset Include="Assets.xcassets\ic_ac_unit.imageset\ic_ac_unit_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_ac_unit.imageset\ic_ac_unit_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_alarm.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_alarm.imageset\ic_alarm.png" />
+    <ImageAsset Include="Assets.xcassets\ic_alarm.imageset\ic_alarm_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_alarm.imageset\ic_alarm_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_vintage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_vintage.imageset\ic_filter_vintage.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_vintage.imageset\ic_filter_vintage_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter_vintage.imageset\ic_filter_vintage_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

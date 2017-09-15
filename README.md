@@ -1,15 +1,40 @@
-<img align="left" src="arts/MDC.png" width=64 >
+<link href='//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
 
-# Xamarin Binding for Material Components for iOS
-
-<img align="right" src="arts/Shrine.gif" width="320px">
-<img align="right" src="arts/ShrineRemoteImage.gif" width="320px">
-Xamarin.iOS bindigs for Material Components for iOS (MDC-iOS).
+<h1 align="center">
+  <br>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img  src="arts/MDC.png" width="128" ></a>
+  <br>
+  Xamarin.iOS Binding for Material Components for iOS.
+  <br>
+</h1>
 
 [![Build Status](https://www.bitrise.io/app/90b72d60b57288b7/status.svg?token=EMYZt7i6cIt8J8-uNQRmkA&branch=master)](https://www.bitrise.io/app/90b72d60b57288b7)
 [![NuGet Badge](https://buildstats.info/nuget/Xamarin.iOS.MaterialComponents)](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents/)
 
+<table>
+<tr>
+<td><p>C# binding of the <a href="https://github.com/material-components/material-components-ios" target="_blank" >Materialcomponents for iOS</a> the Modular and customisable <a href="https://material.io/" target="_blank" >Material Design UI components</a> for IOS.<br>Xamarin binding of Material Components for iOS and the adopted sample, demo and example iOS apps are written in C#.<br><br>The Xamarin binding versions follow the relevant MaterialComponents for iOS's versions. e.g. MaterialComponents for iOS v31.0.0 --> MaterialComponentBinding v31.0.0.</p>
+</td>
+</tr>
+</table>
+
+## Current Version
+
+- v34.0.1
+
+## Demos
+
+Click on any image for further details.
+
+
+<p align="center">
+<a href="samples/"><img  src="arts/Shrine.gif" width="320px"></a>
+<a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="320px"></a>
+<a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="320px"></a>
+</p>
+
 ## Usage
+
 - Scenario 1: Try the Sample app - Clone and open the MaterialComponents solution.
 
 ``` bash
@@ -21,9 +46,6 @@ open -a "Visual Studio" MaterialComponentsXamarin/MaterialComponentsBinding.sln
 
 For further usage details, have a look at the [Samples](samples/) directory and the [API Documentation](https://material.io/components/ios/catalog/).
 
-# Current Version
- - v34.0.1 - Note: the versions follow the relevant MaterialComponents for iOS's versioning system.
-   e.g. MaterialComponents for iOS vX.Y.Z --> MaterialComponentBinding vX.Y.Z.
 
 # Requirements
 
@@ -39,12 +61,12 @@ For further usage details, have a look at the [Samples](samples/) directory and 
 
 # Contribute
 
-Thank yoo for your interest in this Xamarin Bindings and the sample code.
+Thank you for your interest in this Xamarin Bindings and the sample code.
 Here are some ways you can contribute to this project:
 
 - Fix issues opened in GitHub against the binding source code and/or the sample.
 - Fix API definitions in the [Binding Project](src/MaterialComponents/).
-- Add a new features to the sample app.
+- Add new features to the sample app.
 - Add or improve comments to or in the sample code.
 
 
@@ -64,7 +86,7 @@ copyright Google Inc. and licensed under
   - **This software** contains demo code, samples, examples and tutorials derived from the Google Inc.'s Material Components for iOS project and licensed under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)  without a NOTICE file.
 
 
-  - **Xamarin Binding of Material Components for iOS** uses: the Material Components for iOS and its dependends, copyright Google Inc. and licensed under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) without a NOTICE file.
+  - **Xamarin Binding of Material Components for iOS** uses: the Material Components for iOS and its dependents, copyright Google Inc. and licensed under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) without a NOTICE file.
 
 For extra information about licenses, you can see it at the dependency repositories.
 

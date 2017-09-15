@@ -48,7 +48,7 @@ namespace Pesto.Views
             cellView.ClipsToBounds = true;
             AddSubview(cellView);
 
-            var shadowLayer = new MDCShadowLayer(Layer);
+            var shadowLayer = (MDCShadowLayer)Layer;
             shadowLayer.ShadowMaskEnabled = false;
             shadowLayer.Elevation = Elevation.MDCShadowElevationCardResting;
             //0,0,304, 228
@@ -103,8 +103,28 @@ namespace Pesto.Views
             this.iconImageName = iconName;
 
             var iconFrame = new CGRect(0, 0, 32, 32);
-            var icon = UIImage.FromBundle("ic_favorite");
-            //iconImageView.Frame = iconFrame;
+            var icon = UIImage.FromBundle("ic_format_color_fill");
+            if (iconImageName == "Main")
+            {
+                icon = UIImage.FromBundle("ic_format_color_fill");
+            }
+            else if (iconImageName == "Meat")
+            {
+                icon = UIImage.FromBundle("ic_ac_unit");
+            }
+            else if (iconImageName == "Spicy")
+            {
+                icon = UIImage.FromBundle("ic_whatshot");
+            }
+            else if (iconImageName == "Timer")
+            {
+                icon = UIImage.FromBundle("ic_alarm");
+            }
+            else if (iconImageName == "Veggie")
+            {
+                icon = UIImage.FromBundle("ic_filter_vintage");
+            }
+
             iconImageView.Image = icon;
 
             imageService.FetchImageAndThumbNail(imageUrl, (UIImage image, UIImage thumbnailImage) => {
