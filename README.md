@@ -17,20 +17,20 @@
 </td>
 </tr>
 </table>
+<p align="center">
+<a href="samples/"><img  src="arts/Shrine.gif" width="33%"></a>
+<a href="samples/"><img  src="arts/Pesto.gif" width="33%"></a>
+<a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="33%"></a>
+</p>
+
+## Demos
+
+These apps above were translated from the original Siwft/ObjC sample apps to C# using Xamarin.iOS bindigs.
+Click on any image for further details.
 
 ## Current Version
 
 - v34.0.1
-
-## Demos
-
-Click on any image for further details.
-
-<p align="center">
-<a href="samples/"><img  src="arts/Shrine.gif" width="320px"></a>
-<a href="samples/"><img  src="arts/Pesto.gif" width="320px"></a>
-<a href="samples/"><img  src="arts/ShrineRemoteImage.gif" width="320px"></a>
-</p>
 
 ## Usage
 
