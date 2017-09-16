@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>MaterialComponents</id>
+    <id>Xamarin.iOS.MaterialComponents</id>
     <version>35.0.0</version>
     <title>Xamarin.iOS.MaterialComponents</title>
     <authors>ilap</authors>
@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/ilap/MaterialComponentsXamarin</projectUrl>
     <iconUrl>https://github.com/ilap/MaterialComponentsXamarin/blob/master/arts/MDC.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Material Components for iOS (MDC-iOS) binding for Xamarin.iOS.</description>    
+    <description>Material Components for iOS (MDC-iOS) binding for Xamarin.iOS.</description>
     <copyright>Copyright (c) 2017-Present Pal Dorogi "ilap"</copyright>
     <tags>xamarin, MaterialComponents, ilap, Xamarin.iOS, iOS</tags>
   </metadata>
