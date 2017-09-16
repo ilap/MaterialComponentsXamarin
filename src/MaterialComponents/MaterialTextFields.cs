@@ -432,14 +432,16 @@ namespace MaterialComponents.MaterialTextFields
         // @property (assign, nonatomic) BOOL expandsOnOverflow;
         [Export("expandsOnOverflow")]
         bool ExpandsOnOverflow { get; set; }
-		// @property (nonatomic, strong) UIColor * _Null_unspecified floatingPlaceholderColor;
-		[Export ("floatingPlaceholderColor", ArgumentSemantic.Strong)]
-		UIColor FloatingPlaceholderColor { get; set; }
 
-		// @property (nonatomic, strong, class) UIColor * _Null_unspecified floatingPlaceholderColorDefault;
-		[Static]
-		[Export ("floatingPlaceholderColorDefault", ArgumentSemantic.Strong)]
-		UIColor FloatingPlaceholderColorDefault { get; set; }
+        // @property (nonatomic, strong) UIColor * _Null_unspecified floatingPlaceholderNormalColor;
+        [Static]
+        [Export ("floatingPlaceholderNormalColor", ArgumentSemantic.Strong)]
+		UIColor FloatingPlaceholderNormalColor { get; set; }
+
+        // @property (nonatomic, strong, class) UIColor * _Null_unspecified floatingPlaceholderNormalColorDefault;
+        [Static]
+		[Export ("floatingPlaceholderNormalColorDefault", ArgumentSemantic.Strong)]
+		UIColor FloatingPlaceholderNormalColorDefault { get; set; }
 
 		// @property (nonatomic, strong) NSNumber * _Null_unspecified floatingPlaceholderScale;
 		[Export ("floatingPlaceholderScale", ArgumentSemantic.Strong)]
@@ -501,14 +503,15 @@ namespace MaterialComponents.MaterialTextFields
     // @interface MDCTextInputControllerLegacyDefault : NSObject <MDCTextInputController>
     [BaseType(typeof(NSObject))]
     interface MDCTextInputControllerLegacyDefault : MDCTextInputController {
-        // @property (nonatomic, strong) UIColor * _Null_unspecified floatingPlaceholderColor;
-        [Export("floatingPlaceholderColor", ArgumentSemantic.Strong)]
-        UIColor FloatingPlaceholderColor { get; set; }
-
-        // @property (nonatomic, strong, class) UIColor * _Null_unspecified floatingPlaceholderColorDefault;
+        // @property (nonatomic, strong) UIColor * _Null_unspecified floatingPlaceholderNormalColor;
         [Static]
-        [Export("floatingPlaceholderColorDefault", ArgumentSemantic.Strong)]
-        UIColor FloatingPlaceholderColorDefault { get; set; }
+        [Export("floatingPlaceholderNormalColor", ArgumentSemantic.Strong)]
+        UIColor FloatingPlaceholderNormalColor { get; set; }
+
+        // @property (nonatomic, strong, class) UIColor * _Null_unspecified floatingPlaceholderNormalColorDefault;
+        [Static]
+        [Export("floatingPlaceholderNormalColorDefault", ArgumentSemantic.Strong)]
+         UIColor FloatingPlaceholderNormalColorDefault { get; set; }
 
         // @property (nonatomic, strong) NSNumber * _Null_unspecified floatingPlaceholderScale;
         [Export("floatingPlaceholderScale", ArgumentSemantic.Strong)]

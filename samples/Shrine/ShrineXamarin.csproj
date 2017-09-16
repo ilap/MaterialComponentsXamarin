@@ -9,7 +9,7 @@
     <RootNamespace>ShrineXamarin</RootNamespace>
     <AssemblyName>ShrineXamarin</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>34.0.1</ReleaseVersion>
+    <ReleaseVersion>35.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

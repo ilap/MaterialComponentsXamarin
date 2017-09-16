@@ -9,7 +9,7 @@
     <RootNamespace>MaterialComponents</RootNamespace>
     <AssemblyName>MaterialComponents</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>34.0.1</ReleaseVersion>
+    <ReleaseVersion>35.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,23 +71,23 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionAnimator.framework">
+    <NativeReference Include="..\..\references\MDFTextAccessibility.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionInterchange.framework">
+    <NativeReference Include="..\..\references\MotionAnimator.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v34.0.1.Debug\MotionTransitioning.framework">
+    <NativeReference Include="..\..\references\MotionInterchange.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v34.0.1.Debug\MaterialComponents.framework">
+    <NativeReference Include="..\..\references\MotionTransitioning.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\references\v34.0.1.Debug\MDFTextAccessibility.framework">
+    <NativeReference Include="..\..\references\MaterialComponents.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

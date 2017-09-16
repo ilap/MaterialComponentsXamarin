@@ -66,9 +66,10 @@ namespace MaterialComponents.MaterialPageControl
 		[Export("updateCurrentPageDisplay")]
 		void UpdateCurrentPageDisplay();
 
-		// -(CGSize)sizeForNumberOfPages:(NSInteger)pageCount;
-		[Export("sizeForNumberOfPages:")]
-		CGSize SizeForNumberOfPages(nint pageCount);
+        // -(CGSize)sizeForNumberOfPages:(NSInteger)pageCount;
+        [Static]
+        [Export("sizeForNumberOfPages:")]
+        CGSize SizeForNumberOfPages(nint pageCount);
 
 		// -(void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 		[Export("scrollViewDidScroll:")]

@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialComponents", "src\MaterialComponents\MaterialComponents.csproj", "{F888B10B-1D2E-44F5-AAE9-3335566E67A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC-Tutorial", "samples\MDC-Tutorial\MDC-Tutorial.csproj", "{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,18 +31,6 @@ Global
 		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F888B10B-1D2E-44F5-AAE9-3335566E67A7}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|Any CPU.Build.0 = Release|iPhone
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhone.ActiveCfg = Release|iPhone
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhone.Build.0 = Release|iPhone
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{3AC64AE1-3149-4F53-A7A6-4CD760689AF3}.Debug|iPhone.Build.0 = Debug|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
@@ -71,7 +57,7 @@ Global
 		$5.NewLineForCatch = False
 		$5.NewLineForFinally = False
 		$5.scope = text/x-csharp
-		description = @This Xamarin Binding Solution follows the Material Components for iOS and other projects versioning convention.\ne.g.:\n* Material Components for iOS 31.0.0 --> Xamarin Bindig 31.0.0\n* MDFTextAccessibility --> use the latest.
-		version = 31.0.1
+		description = @For Api changes check https://github.com/material-components/material-components-ios/releases/tag/v35.0.0\n\nThis Xamarin Binding Solution follows the Material Components for iOS and other projects versioning convention.\ne.g.:\n* Material Components for iOS 31.0.0 --> Xamarin Bindig 31.0.0\n* MDFTextAccessibility --> use the latest.
+		version = 35.0.0
 	EndGlobalSection
 EndGlobal

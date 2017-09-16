@@ -9,7 +9,7 @@
     <RootNamespace>ShrineRemoteImage.iOS</RootNamespace>
     <AssemblyName>ShrineRemoteImage.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>34.0.1</ReleaseVersion>
+    <ReleaseVersion>35.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,10 +121,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Views\ShrineCollectionViewController.cs" />
     <Compile Include="Views\ShrineHeaderContentView.cs" />
-    <Compile Include="Views\ViewController.cs" />
-    <Compile Include="Views\ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ShrineFlexibleHeaderContainerViewController.cs" />
     <Compile Include="Views\ShrineCollectionViewCell.cs" />
     <Compile Include="Views\ShrineInkOverlay.cs" />

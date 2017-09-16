@@ -9,7 +9,7 @@
     <RootNamespace>Pesto</RootNamespace>
     <AssemblyName>Pesto</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>34.0.1</ReleaseVersion>
+    <ReleaseVersion>35.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -155,10 +155,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\PestoViewController.cs" />
     <Compile Include="Views\PestoCollectionViewController.cs" />
     <Compile Include="Model\PestoData.cs" />
