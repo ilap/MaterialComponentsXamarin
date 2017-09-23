@@ -112,6 +112,15 @@ namespace MaterialComponents.MaterialButtons
         [Export("setBorderWidth:forState:")]
         void SetBorderWidth(nfloat borderWidth, UIControlState state);
 
+        // -(void)setShadowColor:(UIColor * _Nullable)shadowColor forState:(UIControlState)state __attribute__((annotate("ui_appearance_selector")));
+        [Export("setShadowColor:forState:")]
+        void SetShadowColor([NullAllowed] UIColor shadowColor, UIControlState state);
+
+        // -(UIColor * _Nullable)shadowColorForState:(UIControlState)state;
+        [Export("shadowColorForState:")]
+        [return: NullAllowed]
+        UIColor ShadowColorForState(UIControlState state);
+
 		// @property (nonatomic, strong) UIColor * _Nullable customTitleColor __attribute__((deprecated("Use setTitleColor:forState: instead"))) __attribute__((annotate("ui_appearance_selector")));
 		[NullAllowed, Export ("customTitleColor", ArgumentSemantic.Strong)]
 		UIColor CustomTitleColor { get; set; }
