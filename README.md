@@ -29,7 +29,7 @@ Click on any image for further details.
 
 ## Current Version
 
-- v35.0.0
+- For current version see **release** and **Nuget** badges above.
 
 ## Usage
 
