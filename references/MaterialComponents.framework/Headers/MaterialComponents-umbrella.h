@@ -20,6 +20,8 @@
 #import "MaterialAppBar.h"
 #import "MDCAppBar.h"
 #import "MDCAppBarContainerViewController.h"
+#import "MaterialBottomAppBar.h"
+#import "MDCBottomAppBarView.h"
 #import "MaterialBottomSheet.h"
 #import "MDCBottomSheetController.h"
 #import "MDCBottomSheetPresentationController.h"

@@ -204,4 +204,19 @@ namespace MaterialComponents
 		Leading
 	}
 
+    [Native]
+    public enum MDCBottomAppBarFloatingButtonElevation : long
+    {
+        Primary = 0,
+        Secondary = 1
+    }
+
+    [Native]
+    public enum MDCBottomAppBarFloatingButtonPosition : long
+    {
+        Center = 0,
+        Leading = 1,
+        Trailing = 2
+    }
+
 }

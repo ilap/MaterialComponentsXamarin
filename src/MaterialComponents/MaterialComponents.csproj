@@ -9,7 +9,7 @@
     <RootNamespace>MaterialComponents</RootNamespace>
     <AssemblyName>MaterialComponents</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>35.0.0</ReleaseVersion>
+    <ReleaseVersion>35.2.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,6 +66,7 @@
     <ObjcBindingApiDefinition Include="MaterialMaskedTransition.cs" />
     <ObjcBindingApiDefinition Include="MotionTransitioning.cs" />
     <ObjcBindingApiDefinition Include="MaterialIcons.cs" />
+    <ObjcBindingApiDefinition Include="MaterialBottomAppBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
