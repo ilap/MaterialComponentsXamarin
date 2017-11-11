@@ -57,7 +57,7 @@ Global
 		$5.NewLineForCatch = False
 		$5.NewLineForFinally = False
 		$5.scope = text/x-csharp
-		description = @For Api changes check https://github.com/material-components/material-components-ios/releases/tag/v35.2.0\n\nThis Xamarin Binding Solution follows the Material Components for iOS and other projects versioning convention.\ne.g.:\n* Material Components for iOS 31.0.0 --> Xamarin Bindig 31.0.0\n* MDFTextAccessibility --> use the latest.
-		version = 35.2.0
+		description = @For Api changes check https://github.com/material-components/material-components-ios/releases/tag/v39.0.0\n\nThis Xamarin Binding Solution follows the Material Components for iOS and other projects versioning convention.\ne.g.:\n* Material Components for iOS 31.0.0 --> Xamarin Bindig 31.0.0\n* MDFTextAccessibility --> use the latest.
+		version = 39.0.0
 	EndGlobalSection
 EndGlobal

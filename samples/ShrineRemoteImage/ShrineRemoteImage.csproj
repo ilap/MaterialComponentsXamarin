@@ -9,7 +9,7 @@
     <RootNamespace>ShrineRemoteImage.iOS</RootNamespace>
     <AssemblyName>ShrineRemoteImage.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ReleaseVersion>35.2.0</ReleaseVersion>
+    <ReleaseVersion>39.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
