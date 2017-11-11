@@ -10,7 +10,9 @@
 #endif
 #endif
 
+#import "CATransaction+MotionAnimator.h"
 #import "MDMAnimatableKeyPaths.h"
+#import "MDMCoreAnimationTraceable.h"
 #import "MDMMotionAnimator.h"
 #import "MotionAnimator.h"
 

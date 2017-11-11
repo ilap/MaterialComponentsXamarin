@@ -1,5 +1,5 @@
 /*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+ Copyright 2016-present Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -23,7 +23,15 @@
  `+[UIView userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:]`.
  */
 
+
+
 @interface UIView (MaterialRTL)
+
+// UISemanticContentAttribute was added in iOS SDK 9.0 but is available on devices running earlier
+// version of iOS. We ignore the partial-availability warning that gets thrown on our use of this
+// symbol.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
 
 /**
  A semantic description of the view's contents, used to determine whether the view should be flipped
@@ -33,21 +41,21 @@
    - iOS 8 and below: UISemanticContentAttributeUnspecified.
    - iOS 9 and above: same as -[UIView semanticContentAttribute]
  */
-@property(nonatomic, setter=mdc_setSemanticContentAttribute:)
-    UISemanticContentAttribute mdc_semanticContentAttribute;
+@property(nonatomic, setter=mdf_setSemanticContentAttribute:)
+    UISemanticContentAttribute mdf_semanticContentAttribute;
 
 /**
  The user interface layout direction appropriate for arranging the immediate content of this view.
 
- Always consult the mdc_effectiveUserInterfaceLayoutDirection of the view whose immediate content is
+ Always consult the mdf_effectiveUserInterfaceLayoutDirection of the view whose immediate content is
  being arranged or drawn. Do not assume that the value propagates through the view's subtree.
 
  @note
-   - iOS 9 and below: same as +[UIView mdc_userInterfaceLayoutDirectionForSemanticContentAttribute:]
+   - iOS 9 and below: same as +[UIView mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:]
    - iOS 10 and above: same as -[UIView effectiveUserInterfaceLayoutDirection]
  */
 @property(nonatomic, readonly)
-    UIUserInterfaceLayoutDirection mdc_effectiveUserInterfaceLayoutDirection;
+    UIUserInterfaceLayoutDirection mdf_effectiveUserInterfaceLayoutDirection;
 
 /**
  Returns the layout direction implied by the provided semantic content attribute relative to the
@@ -57,7 +65,7 @@
  @param semanticContentAttribute The semantic content attribute.
  @return The layout direction.
  */
-+ (UIUserInterfaceLayoutDirection)mdc_userInterfaceLayoutDirectionForSemanticContentAttribute:
++ (UIUserInterfaceLayoutDirection)mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:
         (UISemanticContentAttribute)semanticContentAttribute;
 
 /**
@@ -65,16 +73,18 @@
  provided layout direction. For example, when provided a layout direction of
  RightToLeft and a semantic content attribute of Playback, this method returns LeftToRight. Layout
  and drawing code can use this method to determine how to arrange elements, but might find it easier
- to query the container view's mdc_effectiveUserInterfaceLayoutDirection property instead.
+ to query the container view's mdf_effectiveUserInterfaceLayoutDirection property instead.
 
  @param semanticContentAttribute The semantic content attribute.
  @param layoutDirection The layout direction to consider.
  @return The implied layout direction.
  */
 + (UIUserInterfaceLayoutDirection)
-    mdc_userInterfaceLayoutDirectionForSemanticContentAttribute:
+    mdf_userInterfaceLayoutDirectionForSemanticContentAttribute:
         (UISemanticContentAttribute)semanticContentAttribute
                                       relativeToLayoutDirection:
                                           (UIUserInterfaceLayoutDirection)layoutDirection;
+
+#pragma clang diagnostic pop
 
 @end

@@ -14,19 +14,28 @@
  limitations under the License.
  */
 
-#import "MDCTextInputControllerDefault.h"
-
 /**
- Material Design compliant text field with border and border-crossing, floating label from 2017. It
- is intended to be used on single-line text fields.
-
- The placeholder text is laid out inline. It will float above the field when there is content or the
- field is being edited. The character count is below text.
-
- The background is opaque, the corners are rounded, there is a border, there is an underline, and
- the placeholder crosses the border cutting out a space.
+ MDCMultilineTextInputDelegate has a method common to the UITextFieldDelegate protocol but not
+ found in UITextViewDelegate.
  */
 
-@interface MDCTextInputControllerOutlinedField : MDCTextInputControllerDefault
+#import <UIKit/UIKit.h>
+
+@protocol MDCMultilineTextInputDelegate <NSObject>
+
+@optional
+
+/**
+ Called when the clear button is tapped.
+
+ Return YES to set the textfield's .text to nil.
+ Return NO to ignore and keep the .text.
+
+ A direct mirror of UITextFieldDelegate's textFieldShouldClear:.
+
+ UITextView's don't require this method already because they do not have clear buttons. The clear
+ button in MDCMultilineTextField is custom.
+ */
+- (BOOL)multilineTextFieldShouldClear:(UIView <MDCTextInput>*)textField;
 
 @end

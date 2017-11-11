@@ -44,6 +44,10 @@ namespace MaterialComponents.MaterialSlider
 		[Export("color", ArgumentSemantic.Strong)]
 		UIColor Color { get; set; }
 
+        // @property (nonatomic, strong) UIColor * _Null_unspecified disabledColor;
+        [Export("disabledColor", ArgumentSemantic.Strong)]
+        UIColor DisabledColor { get; set; }
+
 		// @property (nonatomic, strong) UIColor * _Null_unspecified trackBackgroundColor;
 		[Export("trackBackgroundColor", ArgumentSemantic.Strong)]
 		UIColor TrackBackgroundColor { get; set; }

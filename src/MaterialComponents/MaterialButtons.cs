@@ -31,7 +31,6 @@ using MaterialComponents;
 namespace MaterialComponents.MaterialButtons
 {
     
-
 	// @interface MDCButton : UIButton
     //[Protocol, Model]
 	[BaseType (typeof(UIButton))]
@@ -60,6 +59,14 @@ namespace MaterialComponents.MaterialButtons
 		// @property (nonatomic) UIEdgeInsets hitAreaInsets;
 		[Export ("hitAreaInsets", ArgumentSemantic.Assign)]
 		UIEdgeInsets HitAreaInsets { get; set; }
+
+        // @property (assign, nonatomic) CGSize minimumSize __attribute__((annotate("ui_appearance_selector")));
+        [Export("minimumSize", ArgumentSemantic.Assign)]
+        CGSize MinimumSize { get; set; }
+
+        // @property (assign, nonatomic) CGSize maximumSize __attribute__((annotate("ui_appearance_selector")));
+        [Export("maximumSize", ArgumentSemantic.Assign)]
+        CGSize MaximumSize { get; set; }
 
 		// @property (nonatomic, strong) UIColor * _Nullable underlyingColorHint;
 		[NullAllowed, Export ("underlyingColorHint", ArgumentSemantic.Strong)]

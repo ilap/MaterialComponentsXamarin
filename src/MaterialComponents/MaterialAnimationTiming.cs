@@ -55,4 +55,17 @@ namespace MaterialComponents.MaterialAnimationTiming
         [Export("mdc_animateWithTimingFunction:duration:delay:options:animations:completion:")]
         void Mdc_animateWithTimingFunction(CAMediaTimingFunction timingFunction, double duration, double delay, UIViewAnimationOptions options, Action animations, Action<bool> completion);
     }
+
+    // @interface MDCAnimationTiming (CAMediaTimingFunction)
+    [Category]
+    [BaseType(typeof(CAMediaTimingFunction))]
+    interface CAMediaTimingFunction_MDCAnimationTiming
+    {
+        // +(CAMediaTimingFunction * _Nullable)mdc_functionWithType:(MDCAnimationTimingFunction)type;
+        [Static]
+        [Export("mdc_functionWithType:")]
+        [return: NullAllowed]
+        CAMediaTimingFunction Mdc_functionWithType(MDCAnimationTimingFunction type);
+    }
+
 }

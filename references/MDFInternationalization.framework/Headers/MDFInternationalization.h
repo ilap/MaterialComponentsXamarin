@@ -1,5 +1,5 @@
 /*
- Copyright 2016-present the Material Components for iOS authors. All Rights Reserved.
+ Copyright 2016-present Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,6 +14,14 @@
  limitations under the License.
  */
 
-#import "MDCRTL.h"
-#import "UIImage+MaterialRTL.h"
-#import "UIView+MaterialRTL.h"
+#import <UIKit/UIKit.h>
+
+#import <MDFInternationalization/MDFRTL.h>
+#import <MDFInternationalization/UIImage+MaterialRTL.h>
+#import <MDFInternationalization/UIView+MaterialRTL.h>
+
+//! Project version number for MDFInternationalization.
+FOUNDATION_EXPORT double MDFInternationalizationVersionNumber;
+
+//! Project version string for MDFInternationalization.
+FOUNDATION_EXPORT const unsigned char MDFInternationalizationVersionString[];

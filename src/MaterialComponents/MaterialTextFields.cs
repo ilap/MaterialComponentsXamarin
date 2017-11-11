@@ -1,8 +1,6 @@
 using System;
-using CoreAnimation;
 using CoreGraphics;
 using Foundation;
-using MaterialComponents;
 using ObjCRuntime;
 using UIKit;
 
@@ -13,118 +11,150 @@ namespace MaterialComponents.MaterialTextFields
 	//[Protocol]//, Model]
 	[BaseType (typeof(NSObject))]
     [Protocol, Model]
-    interface MDCTextInput//: IMDCTextInput
-	{
-		// @required @property (copy, nonatomic) NSAttributedString * _Nullable attributedPlaceholder;
-		[Abstract]
-		[NullAllowed, Export ("attributedPlaceholder", ArgumentSemantic.Copy)]
-		NSAttributedString AttributedPlaceholder { get; set; }
+    interface MDCTextInput
+    {
+        // @required @property (copy, nonatomic) NSAttributedString * _Nullable attributedPlaceholder;
+        [Abstract]
+        [NullAllowed, Export("attributedPlaceholder", ArgumentSemantic.Copy)]
+        NSAttributedString AttributedPlaceholder { get; set; }
 
-		// @required @property (copy, nonatomic) NSAttributedString * _Nullable attributedText;
-		[Abstract]
-		[NullAllowed, Export ("attributedText", ArgumentSemantic.Copy)]
-		NSAttributedString AttributedText { get; set; }
+        // @required @property (copy, nonatomic) NSAttributedString * _Nullable attributedText;
+        [Abstract]
+        [NullAllowed, Export("attributedText", ArgumentSemantic.Copy)]
+        NSAttributedString AttributedText { get; set; }
 
-		// @required @property (readonly, nonatomic, strong) UIButton * _Nonnull clearButton;
-		[Abstract]
-		[Export ("clearButton", ArgumentSemantic.Strong)]
-		UIButton ClearButton { get; }
+        // @required @property (copy, nonatomic) UIBezierPath * _Nullable borderPath __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [NullAllowed, Export("borderPath", ArgumentSemantic.Copy)]
+        UIBezierPath BorderPath { get; set; }
 
-		// @required @property (nonatomic, strong) UIColor * _Nullable clearButtonColor __attribute__((annotate("ui_appearance_selector")));
-		[Abstract]
-		[NullAllowed, Export ("clearButtonColor", ArgumentSemantic.Strong)]
-		UIColor ClearButtonColor { get; set; }
+        // @required @property (nonatomic, strong) MDCTextInputBorderView * _Nullable borderView;
+        [Abstract]
+        [NullAllowed, Export("borderView", ArgumentSemantic.Strong)]
+        MDCTextInputBorderView BorderView { get; set; }
 
-		// @required @property (assign, nonatomic) UITextFieldViewMode clearButtonMode;
-		[Abstract]
-		[Export ("clearButtonMode", ArgumentSemantic.Assign)]
-		UITextFieldViewMode ClearButtonMode { get; set; }
+        // @required @property (readonly, nonatomic, strong) UIButton * _Nonnull clearButton;
+        [Abstract]
+        [Export("clearButton", ArgumentSemantic.Strong)]
+        UIButton ClearButton { get; }
 
-		// @required @property (readonly, getter = isEditing, assign, nonatomic) BOOL editing;
-		[Abstract]
-		[Export ("editing")]
-		bool Editing { [Bind ("isEditing")] get; }
+        // @required @property (assign, nonatomic) UITextFieldViewMode clearButtonMode __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [Export("clearButtonMode", ArgumentSemantic.Assign)]
+        UITextFieldViewMode ClearButtonMode { get; set; }
 
-		// @required @property (getter = isEnabled, assign, nonatomic) BOOL enabled;
-		[Abstract]
-		[Export ("enabled")]
-		bool Enabled { [Bind ("isEnabled")] get; set; }
+        // @required @property (nonatomic, strong) UIColor * _Nullable cursorColor __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [NullAllowed, Export("cursorColor", ArgumentSemantic.Strong)]
+        UIColor CursorColor { get; set; }
 
-		// @required @property (nonatomic, strong) UIFont * _Nullable font;
-		[Abstract]
-		[NullAllowed, Export ("font", ArgumentSemantic.Strong)]
-		UIFont Font { get; set; }
+        // @required @property (readonly, getter = isEditing, assign, nonatomic) BOOL editing;
+        [Abstract]
+        [Export("editing")]
+        bool Editing { [Bind("isEditing")] get; }
 
-		// @required @property (assign, nonatomic) BOOL hidesPlaceholderOnInput;
-		[Abstract]
-		[Export ("hidesPlaceholderOnInput")]
-		bool HidesPlaceholderOnInput { get; set; }
+        // @required @property (getter = isEnabled, assign, nonatomic) BOOL enabled;
+        [Abstract]
+        [Export("enabled")]
+        bool Enabled { [Bind("isEnabled")] get; set; }
 
-		// @required @property (readonly, nonatomic, strong) UILabel * _Nonnull leadingUnderlineLabel;
-		[Abstract]
-		[Export ("leadingUnderlineLabel", ArgumentSemantic.Strong)]
-		UILabel LeadingUnderlineLabel { get; }
+        // @required @property (nonatomic, strong) UIFont * _Nullable font;
+        [Abstract]
+        [NullAllowed, Export("font", ArgumentSemantic.Strong)]
+        UIFont Font { get; set; }
 
-		// @required @property (nonatomic, setter = mdc_setAdjustsFontForContentSizeCategory:) BOOL mdc_adjustsFontForContentSizeCategory __attribute__((annotate("ui_appearance_selector")));
-		[Abstract]
-		[Export ("mdc_adjustsFontForContentSizeCategory")]
-		bool Mdc_adjustsFontForContentSizeCategory { get; [Bind ("mdc_setAdjustsFontForContentSizeCategory:")] set; }
+        // @required @property (assign, nonatomic) BOOL hidesPlaceholderOnInput;
+        [Abstract]
+        [Export("hidesPlaceholderOnInput")]
+        bool HidesPlaceholderOnInput { get; set; }
 
-		// @required @property (copy, nonatomic) NSString * _Nullable placeholder;
-		[Abstract]
-		[NullAllowed, Export ("placeholder")]
-		string Placeholder { get; set; }
+        // @required @property (readonly, nonatomic, strong) UILabel * _Nonnull leadingUnderlineLabel;
+        [Abstract]
+        [Export("leadingUnderlineLabel", ArgumentSemantic.Strong)]
+        UILabel LeadingUnderlineLabel { get; }
 
-		// @required @property (readonly, nonatomic, strong) UILabel * _Nonnull placeholderLabel;
-		[Abstract]
-		[Export ("placeholderLabel", ArgumentSemantic.Strong)]
-		UILabel PlaceholderLabel { get; }
+        // @required @property (nonatomic, setter = mdc_setAdjustsFontForContentSizeCategory:) BOOL mdc_adjustsFontForContentSizeCategory __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [Export("mdc_adjustsFontForContentSizeCategory")]
+        bool Mdc_adjustsFontForContentSizeCategory { get; [Bind("mdc_setAdjustsFontForContentSizeCategory:")] set; }
 
-		[Wrap ("WeakPositioningDelegate")]//, Abstract]
-		[NullAllowed]
-		MDCTextInputPositioningDelegate PositioningDelegate { get; set; }
+        // @required @property (copy, nonatomic) NSString * _Nullable placeholder;
+        [Abstract]
+        [NullAllowed, Export("placeholder")]
+        string Placeholder { get; set; }
 
-		// @required @property (nonatomic, weak) id<MDCTextInputPositioningDelegate> _Nullable positioningDelegate;
-		//[Abstract]
-		[NullAllowed, Export ("positioningDelegate", ArgumentSemantic.Weak)]
-		NSObject WeakPositioningDelegate { get; set; }
+        // @required @property (readonly, nonatomic, strong) UILabel * _Nonnull placeholderLabel;
+        [Abstract]
+        [Export("placeholderLabel", ArgumentSemantic.Strong)]
+        UILabel PlaceholderLabel { get; }
 
-		// @required @property (copy, nonatomic) NSString * _Nullable text;
-		[Abstract]
-		[NullAllowed, Export ("text")]
-		string Text { get; set; }
+        [Wrap("WeakPositioningDelegate")]//, Abstract]
+        [NullAllowed]
+        MDCTextInputPositioningDelegate PositioningDelegate { get; set; }
 
-		// @required @property (nonatomic, strong) UIColor * _Nullable textColor;
-		[Abstract]
-		[NullAllowed, Export ("textColor", ArgumentSemantic.Strong)]
-		UIColor TextColor { get; set; }
+        // @required @property (nonatomic, weak) id<MDCTextInputPositioningDelegate> _Nullable positioningDelegate;
+        //[Abstract]
+        [NullAllowed, Export("positioningDelegate", ArgumentSemantic.Weak)]
+        NSObject WeakPositioningDelegate { get; set; }
 
-		// @required @property (readonly, assign, nonatomic) UIEdgeInsets textInsets;
-		[Abstract]
-		[Export ("textInsets", ArgumentSemantic.Assign)]
-		UIEdgeInsets TextInsets { get; }
+        // @required @property (copy, nonatomic) NSString * _Nullable text;
+        [Abstract]
+        [NullAllowed, Export("text")]
+        string Text { get; set; }
 
-		// @required @property (readonly, nonatomic, strong) UILabel * _Nonnull trailingUnderlineLabel;
-		[Abstract]
-		[Export ("trailingUnderlineLabel", ArgumentSemantic.Strong)]
-		UILabel TrailingUnderlineLabel { get; }
+        // @required @property (nonatomic, strong) UIColor * _Nullable textColor;
+        [Abstract]
+        [NullAllowed, Export("textColor", ArgumentSemantic.Strong)]
+        UIColor TextColor { get; set; }
 
-		// @required @property (nonatomic, strong) UIView * _Nullable trailingView;
-		[Abstract]
-		[NullAllowed, Export ("trailingView", ArgumentSemantic.Strong)]
-		UIView TrailingView { get; set; }
+        // @required @property (readonly, assign, nonatomic) UIEdgeInsets textInsets;
+        [Abstract]
+        [Export("textInsets", ArgumentSemantic.Assign)]
+        UIEdgeInsets TextInsets { get; }
 
-		// @required @property (assign, nonatomic) UITextFieldViewMode trailingViewMode;
-		[Abstract]
-		[Export ("trailingViewMode", ArgumentSemantic.Assign)]
-		UITextFieldViewMode TrailingViewMode { get; set; }
+        // @required @property (assign, nonatomic) MDCTextInputTextInsetsMode textInsetsMode __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [Export("textInsetsMode", ArgumentSemantic.Assign)]
+        MDCTextInputTextInsetsMode TextInsetsMode { get; set; }
 
-		// @required @property (readonly, nonatomic, strong) MDCTextInputUnderlineView * _Nullable underline;
-		[Abstract]
-		[NullAllowed, Export ("underline", ArgumentSemantic.Strong)]
-		MDCTextInputUnderlineView Underline { get; }
-	}
+        // @required @property (readonly, nonatomic, strong) UILabel * _Nonnull trailingUnderlineLabel;
+        [Abstract]
+        [Export("trailingUnderlineLabel", ArgumentSemantic.Strong)]
+        UILabel TrailingUnderlineLabel { get; }
 
+        // @required @property (nonatomic, strong) UIView * _Nullable trailingView;
+        [Abstract]
+        [NullAllowed, Export("trailingView", ArgumentSemantic.Strong)]
+        UIView TrailingView { get; set; }
+
+        // @required @property (assign, nonatomic) UITextFieldViewMode trailingViewMode;
+        [Abstract]
+        [Export("trailingViewMode", ArgumentSemantic.Assign)]
+        UITextFieldViewMode TrailingViewMode { get; set; }
+
+        // @required @property (readonly, nonatomic, strong) MDCTextInputUnderlineView * _Nullable underline;
+        [Abstract]
+        [NullAllowed, Export("underline", ArgumentSemantic.Strong)]
+        MDCTextInputUnderlineView Underline { get; }
+    }
+
+    //public interface IMDCMultilineTextInput {}
+    // @protocol MDCMultilineTextInput <MDCTextInput>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface MDCMultilineTextInput : MDCTextInput
+    {
+        // @required @property (assign, nonatomic) BOOL expandsOnOverflow __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [Export("expandsOnOverflow")]
+        bool ExpandsOnOverflow { get; set; }
+
+        // @required @property (assign, nonatomic) NSUInteger minimumLines __attribute__((annotate("ui_appearance_selector")));
+        [Abstract]
+        [Export("minimumLines")]
+        nuint MinimumLines { get; set; }
+
+    }
 
     // @interface MDCTextInputUnderlineView : UIView <NSCopying, NSCoding>
     [BaseType(typeof(UIView))]
@@ -164,7 +194,6 @@ namespace MaterialComponents.MaterialTextFields
 		UITextFieldViewMode LeadingViewMode { get; set; }
 	}
 
-
 	//public interface IMDCTextInputPositioningDelegate { }
 	// @protocol MDCTextInputPositioningDelegate <NSObject>
 	[Protocol, Model]
@@ -178,8 +207,17 @@ namespace MaterialComponents.MaterialTextFields
 		// @optional -(CGRect)editingRectForBounds:(CGRect)bounds defaultRect:(CGRect)defaultRect;
 		[Export("editingRectForBounds:defaultRect:")]
 		CGRect EditingRectForBounds(CGRect bounds, CGRect defaultRect);
-	}
 
+        // VER 35.3.0
+        // @optional -(void)textInputDidLayoutSubviews;
+        [Export("textInputDidLayoutSubviews")]
+        void TextInputDidLayoutSubviews();
+
+        // VER 35.3.0
+        // @optional -(void)textInputDidUpdateConstraints;
+        [Export("textInputDidUpdateConstraints")]
+        void TextInputDidUpdateConstraints();
+	}
 
 	// @protocol MDCMultilineTextInputLayoutDelegate <NSObject>
 	[Protocol, Model]
@@ -189,24 +227,6 @@ namespace MaterialComponents.MaterialTextFields
 		// @optional -(void)multilineTextField:(id<MDCMultilineTextInput> _Nonnull)multilineTextField didChangeContentSize:(CGSize)size;
 		[Export("multilineTextField:didChangeContentSize:")]
 		void DidChangeContentSize(MDCMultilineTextInput multilineTextField, CGSize size);
-	}
-    
-    //public interface IMDCMultilineTextInput {}
-	// @protocol MDCMultilineTextInput <MDCTextInput>
-	[Protocol, Model]
-    [BaseType(typeof(NSObject))]
-	interface MDCMultilineTextInput : MDCTextInput
-	{
-
-		// @required @property (assign, nonatomic) NSUInteger minimumLines __attribute__((annotate("ui_appearance_selector")));
-		[Abstract]
-		[Export ("minimumLines")]
-		nuint MinimumLines { get; set; }
-
-		// @required @property (assign, nonatomic) BOOL expandsOnOverflow __attribute__((annotate("ui_appearance_selector")));
-		[Abstract]
-		[Export ("expandsOnOverflow")]
-		bool ExpandsOnOverflow { get; set; }
 	}
 
 	[Static]
@@ -224,9 +244,8 @@ namespace MaterialComponents.MaterialTextFields
         // extern const CGFloat MDCTextInputDefaultUnderlineActiveHeight;
         [Field("MDCTextInputDefaultUnderlineActiveHeight", "__Internal")]
         nfloat MDCTextInputDefaultUnderlineActiveHeight { get; }
+
     }
-
-
 
     //public interface IMDCTextInputCharacterCounter {}
 	// @protocol MDCTextInputCharacterCounter <NSObject>
@@ -277,17 +296,6 @@ namespace MaterialComponents.MaterialTextFields
 		[Export ("characterCountViewMode", ArgumentSemantic.Assign)]
 		UITextFieldViewMode CharacterCountViewMode { get; set; }
 
-        //v34.0.1
-        // @required @property (assign, nonatomic) UIRectCorner roundedCorners;
-        [Abstract]
-        [Export("roundedCorners", ArgumentSemantic.Assign)]
-        UIRectCorner RoundedCorners { get; set; }
-
-        // @required @property (assign, nonatomic, class) UIRectCorner roundedCornersDefault;
-        [Static, Abstract]
-        [Export("roundedCornersDefault", ArgumentSemantic.Assign)]
-        UIRectCorner RoundedCornersDefault { get; set; }
-
         // @required @property (nonatomic, strong) UIColor * _Null_unspecified disabledColor;
         [Abstract]
         [Export("disabledColor", ArgumentSemantic.Strong)]
@@ -328,6 +336,26 @@ namespace MaterialComponents.MaterialTextFields
 		[Export ("inlinePlaceholderColorDefault", ArgumentSemantic.Strong)]
 		UIColor InlinePlaceholderColorDefault { get; set; }
 
+        // @required @property (nonatomic, strong) UIFont * _Null_unspecified inlinePlaceholderFont;
+        [Abstract]
+        [Export("inlinePlaceholderFont", ArgumentSemantic.Strong)]
+        UIFont InlinePlaceholderFont { get; set; }
+
+        // @required @property (nonatomic, strong, class) UIFont * _Null_unspecified inlinePlaceholderFontDefault;
+        [Static, Abstract]
+        [Export("inlinePlaceholderFontDefault", ArgumentSemantic.Strong)]
+        UIFont InlinePlaceholderFontDefault { get; set; }
+
+        // @required @property (nonatomic, strong) UIFont * _Null_unspecified leadingUnderlineLabelFont;
+        [Abstract]
+        [Export("leadingUnderlineLabelFont", ArgumentSemantic.Strong)]
+        UIFont LeadingUnderlineLabelFont { get; set; }
+
+        // @required @property (nonatomic, strong, class) UIFont * _Null_unspecified leadingUnderlineLabelFontDefault;
+        [Static, Abstract]
+        [Export("leadingUnderlineLabelFontDefault", ArgumentSemantic.Strong)]
+        UIFont LeadingUnderlineLabelFontDefault { get; set; }
+
         // @required @property (nonatomic, strong) UIColor * _Null_unspecified leadingUnderlineLabelTextColor;
         [Abstract]
         [Export("leadingUnderlineLabelTextColor", ArgumentSemantic.Strong)]
@@ -348,7 +376,6 @@ namespace MaterialComponents.MaterialTextFields
 		[Export ("mdc_adjustsFontForContentSizeCategoryDefault")]
 		bool Mdc_adjustsFontForContentSizeCategoryDefault { get; set; }
 
-
         // @required @property (nonatomic, strong) UIColor * _Null_unspecified normalColor;
         [Abstract]
         [Export("normalColor", ArgumentSemantic.Strong)]
@@ -359,10 +386,35 @@ namespace MaterialComponents.MaterialTextFields
         [Export("normalColorDefault", ArgumentSemantic.Strong)]
         UIColor NormalColorDefault { get; set; }
 
-		// @required @property (nonatomic, strong) UIView<MDCTextInput> * _Nullable textInput;
+        // @required @property (copy, nonatomic) NSString * _Nullable placeholderText;
+        [Abstract]
+        [NullAllowed, Export("placeholderText")]
+        string PlaceholderText { get; set; }
+
+        // @required @property (assign, nonatomic) UIRectCorner roundedCorners;
+        [Abstract]
+        [Export("roundedCorners", ArgumentSemantic.Assign)]
+        UIRectCorner RoundedCorners { get; set; }
+
+        // @required @property (assign, nonatomic, class) UIRectCorner roundedCornersDefault;
+        [Static, Abstract]
+        [Export("roundedCornersDefault", ArgumentSemantic.Assign)]
+        UIRectCorner RoundedCornersDefault { get; set; }
+
+        // @required @property (nonatomic, strong) UIView<MDCTextInput> * _Nullable textInput;
 		[Abstract]
 		[NullAllowed, Export ("textInput", ArgumentSemantic.Strong)]
 		MDCTextInput TextInput { get; set; }
+
+        // @required @property (nonatomic, strong) UIFont * _Null_unspecified trailingUnderlineLabelFont;
+        [Abstract]
+        [Export("trailingUnderlineLabelFont", ArgumentSemantic.Strong)]
+        UIFont TrailingUnderlineLabelFont { get; set; }
+
+        // @required @property (nonatomic, strong, class) UIFont * _Null_unspecified trailingUnderlineLabelFontDefault;
+        [Static, Abstract]
+        [Export("trailingUnderlineLabelFontDefault", ArgumentSemantic.Strong)]
+        UIFont TrailingUnderlineLabelFontDefault { get; set; }
 
         // @required @property (nonatomic, strong) UIColor * _Nullable trailingUnderlineLabelTextColor;
         [Abstract]
@@ -383,26 +435,6 @@ namespace MaterialComponents.MaterialTextFields
 		[Static, Abstract]
 		[Export ("underlineViewModeDefault", ArgumentSemantic.Assign)]
 		UITextFieldViewMode UnderlineViewModeDefault { get; set; }
-
-		// @required @property (nonatomic, strong) UIColor * _Null_unspecified underlineColorActive;
-		//[Abstract]
-		//[Export ("underlineColorActive", ArgumentSemantic.Strong)]
-		//UIColor UnderlineColorActive { get; set; }
-
-		// @required @property (nonatomic, strong, class) UIColor * _Null_unspecified underlineColorActiveDefault;
-		//[Static, Abstract]
-		//[Export ("underlineColorActiveDefault", ArgumentSemantic.Strong)]
-		//UIColor UnderlineColorActiveDefault { get; set; }
-
-		// @required @property (nonatomic, strong) UIColor * _Null_unspecified underlineColorNormal;
-		//[Abstract]
-		//[Export ("underlineColorNormal", ArgumentSemantic.Strong)]
-		//UIColor UnderlineColorNormal { get; set; }
-
-		// @required @property (nonatomic, strong, class) UIColor * _Null_unspecified underlineColorNormalDefault;
-		//[Static, Abstract]
-		//[Export ("underlineColorNormalDefault", ArgumentSemantic.Strong)]
-		//UIColor UnderlineColorNormalDefault { get; set; }
 
 		// @required -(instancetype _Nonnull)initWithTextInput:(UIView<MDCTextInput> * _Nullable)input;
 		//[Abstract]
@@ -434,7 +466,7 @@ namespace MaterialComponents.MaterialTextFields
         bool ExpandsOnOverflow { get; set; }
 
         // @property (nonatomic, strong) UIColor * _Null_unspecified floatingPlaceholderNormalColor;
-        [Static]
+        // MARK V35.3.0[Static]
         [Export ("floatingPlaceholderNormalColor", ArgumentSemantic.Strong)]
 		UIColor FloatingPlaceholderNormalColor { get; set; }
 
@@ -443,12 +475,16 @@ namespace MaterialComponents.MaterialTextFields
 		[Export ("floatingPlaceholderNormalColorDefault", ArgumentSemantic.Strong)]
 		UIColor FloatingPlaceholderNormalColorDefault { get; set; }
 
+        // @property (readonly, nonatomic) UIOffset floatingPlaceholderOffset;
+        [Export("floatingPlaceholderOffset")]
+        UIOffset FloatingPlaceholderOffset { get; }
+
 		// @property (nonatomic, strong) NSNumber * _Null_unspecified floatingPlaceholderScale;
 		[Export ("floatingPlaceholderScale", ArgumentSemantic.Strong)]
 		NSNumber FloatingPlaceholderScale { get; set; }
 
 		// @property (assign, nonatomic, class) CGFloat floatingPlaceholderScaleDefault;
-		[Static]
+        [Static]
 		[Export ("floatingPlaceholderScaleDefault")]
 		nfloat FloatingPlaceholderScaleDefault { get; set; }
 
@@ -472,7 +508,6 @@ namespace MaterialComponents.MaterialTextFields
 	{
 	}
 
-
 	// @interface MDCMultilineTextField : UIView <MDCTextInput, MDCMultilineTextInput>
 	[BaseType (typeof(UIView))]
 	interface MDCMultilineTextField : MDCTextInput, MDCMultilineTextInput
@@ -489,9 +524,16 @@ namespace MaterialComponents.MaterialTextFields
 		[NullAllowed, Export ("layoutDelegate", ArgumentSemantic.Weak)]
 		NSObject WeakLayoutDelegate { get; set; }
 
-		// @property (readonly, assign, nonatomic) UIEdgeInsets textInsets;
-        //
-		//FIXME: CS0108 added new keywError, test whether it works or not.
+        [Wrap("WeakMultilineDelegate")]
+        [NullAllowed]
+        MDCMultilineTextInputDelegate MultilineDelegate { get; set; }
+
+        // @property (nonatomic, weak) id<MDCMultilineTextInputDelegate> _Nullable multilineDelegate __attribute__((iboutlet));
+        [NullAllowed, Export("multilineDelegate", ArgumentSemantic.Weak)]
+        NSObject WeakMultilineDelegate { get; set; }
+
+        // @property (readonly, assign, nonatomic) UIEdgeInsets textInsets;
+        //FIXME: CS0108 added new keywError, test whether it works or not.
 		[Export ("textInsets", ArgumentSemantic.Assign)]
 		new UIEdgeInsets TextInsets { get; }
 
@@ -537,19 +579,48 @@ namespace MaterialComponents.MaterialTextFields
     interface MDCTextInputControllerLegacyFullWidth : MDCTextInputController {
     }
 
-    // @interface MDCTextInputControllerOutlinedField : MDCTextInputControllerDefault
+    // @interface MDCTextInputControllerOutlined : MDCTextInputControllerDefault
     [BaseType(typeof(MDCTextInputControllerDefault))]
-    interface MDCTextInputControllerOutlinedField {
+    interface MDCTextInputControllerOutlined
+    {
     }
 
-    // @interface MDCTextInputControllerTextArea : MDCTextInputControllerDefault
+    // @interface MDCTextInputControllerOutlinedTextArea : MDCTextInputControllerDefault
     [BaseType(typeof(MDCTextInputControllerDefault))]
-    interface MDCTextInputControllerTextArea {
+    interface MDCTextInputControllerOutlinedTextArea
+    {
     }
 
-    // @interface MDCTextInputControllerTextFieldBox : MDCTextInputControllerDefault
+    // @interface MDCTextInputControllerFilled : MDCTextInputControllerDefault
     [BaseType(typeof(MDCTextInputControllerDefault))]
-    interface MDCTextInputControllerTextFieldBox {
+    interface MDCTextInputControllerFilled
+    {
     }
 
+    // @interface MDCTextInputBorderView : UIView <NSCopying>
+    [BaseType(typeof(UIView))]
+    interface MDCTextInputBorderView : INSCopying
+    {
+        // @property (nonatomic, strong) UIColor * _Nullable borderFillColor __attribute__((annotate("ui_appearance_selector")));
+        [NullAllowed, Export("borderFillColor", ArgumentSemantic.Strong)]
+        UIColor BorderFillColor { get; set; }
+
+        // @property (nonatomic, strong) UIBezierPath * _Nullable borderPath __attribute__((annotate("ui_appearance_selector")));
+        [NullAllowed, Export("borderPath", ArgumentSemantic.Strong)]
+        UIBezierPath BorderPath { get; set; }
+
+        // @property (nonatomic, strong) UIColor * _Nullable borderStrokeColor __attribute__((annotate("ui_appearance_selector")));
+        [NullAllowed, Export("borderStrokeColor", ArgumentSemantic.Strong)]
+        UIColor BorderStrokeColor { get; set; }
+    }
+
+    // @protocol MDCMultilineTextInputDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface MDCMultilineTextInputDelegate
+    {
+        // @optional -(BOOL)multilineTextFieldShouldClear:(UIView *)textField;
+        [Export("multilineTextFieldShouldClear:")]
+        bool MultilineTextFieldShouldClear(UIView textField);
+    }
 }

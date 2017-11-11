@@ -24,7 +24,7 @@
 /** The delegate for the thumb track. */
 @property(nullable, nonatomic, weak) id<MDCThumbTrackDelegate> delegate;
 
-/** The color of the thumb on and left track. */
+/** The color of the thumb and left track. */
 @property(nullable, nonatomic, strong) UIColor *primaryColor;
 
 /** The color of the thumb off color. */
@@ -38,10 +38,6 @@
 
 /** The color of the track disabled color. */
 @property(nullable, nonatomic, strong) UIColor *trackDisabledColor;
-
-/** Dummy property to unbreak internal clients. */
-/** TODO(#1216): Remove this property */
-@property(nonatomic, assign) BOOL interpolateOnOffColors;
 
 /**
  The number of discrete values that the thumb can take along the track. If this property is zero,

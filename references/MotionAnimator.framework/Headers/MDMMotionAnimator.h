@@ -17,15 +17,20 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
+#ifdef IS_BAZEL_BUILD
+#import "MotionInterchange.h"
+#else
 #import <MotionInterchange/MotionInterchange.h>
+#endif
 
 #import "MDMAnimatableKeyPaths.h"
+#import "MDMCoreAnimationTraceable.h"
 
 /**
  An animator adds Core Animation animations to a layer based on a provided motion timing.
  */
 NS_SWIFT_NAME(MotionAnimator)
-@interface MDMMotionAnimator : NSObject
+@interface MDMMotionAnimator : NSObject <MDMCoreAnimationTraceable>
 
 /**
  The scaling factor to apply to all time-related values.
@@ -65,6 +70,10 @@ NS_SWIFT_NAME(MotionAnimator)
 /**
  Adds a single animation to the layer with the given timing structure.
 
+ If `additive` is disabled, the animation will be added to the layer with the keyPath as its key.
+ In this case, multiple invocations of this function on the same key path will remove the
+ animations added from prior invocations.
+
  @param timing The timing to be used for the animation.
  @param layer The layer to be animated.
  @param values The values to be used in the animation. Must contain exactly two values. Supported
@@ -79,6 +88,10 @@ NS_SWIFT_NAME(MotionAnimator)
 
 /**
  Adds a single animation to the layer with the given timing structure.
+
+ If `additive` is disabled, the animation will be added to the layer with the keyPath as its key.
+ In this case, multiple invocations of this function on the same key path will remove the
+ animations added from prior invocations.
 
  @param timing The timing to be used for the animation.
  @param layer The layer to be animated.
@@ -95,8 +108,28 @@ NS_SWIFT_NAME(MotionAnimator)
                completion:(nullable void(^)(void))completion;
 
 /**
- Adds a block that will be invoked each time an animation is added to a layer.
+ Performs `animations` using the timing provided.
+
+ @param timing The timing to be used for the animation.
+ @param animations The block to be executed. Any animatable properties changed within this block
+ will result in animations being added to the view's layer with the provided timing. The block is
+ non-escaping.
  */
-- (void)addCoreAnimationTracer:(nonnull void (^)(CALayer * _Nonnull, CAAnimation * _Nonnull))tracer;
+- (void)animateWithTiming:(MDMMotionTiming)timing animations:(nonnull void(^)(void))animations;
+
+/**
+ Performs `animations` using the timing provided and executes the completion handler once all added
+ animations have completed.
+
+ @param timing The timing to be used for the animation.
+ @param animations The block to be executed. Any animatable properties changed within this block
+ will result in animations being added to the view's layer with the provided timing. The block is
+ non-escaping.
+ @param completion The completion handler will be executed once all added animations have come to
+ rest. The block is escaping and will be released once the animations have completed.
+ */
+- (void)animateWithTiming:(MDMMotionTiming)timing
+               animations:(nonnull void (^)(void))animations
+               completion:(nullable void(^)(void))completion;
 
 @end

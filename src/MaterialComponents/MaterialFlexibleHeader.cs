@@ -149,6 +149,10 @@ namespace MaterialComponents.MaterialFlexibleHeader
 		[Export("maximumHeight")]
 		nfloat MaximumHeight { get; set; }
 
+        // @property (nonatomic) BOOL minMaxHeightIncludesSafeArea;
+        [Export("minMaxHeightIncludesSafeArea")]
+        bool MinMaxHeightIncludesSafeArea { get; set; }
+
 		// @property (nonatomic) MDCFlexibleHeaderShiftBehavior shiftBehavior;
 		[Export("shiftBehavior", ArgumentSemantic.Assign)]
 		MDCFlexibleHeaderShiftBehavior ShiftBehavior { get; set; }

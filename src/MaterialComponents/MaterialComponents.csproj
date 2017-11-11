@@ -67,6 +67,7 @@
     <ObjcBindingApiDefinition Include="MotionTransitioning.cs" />
     <ObjcBindingApiDefinition Include="MaterialIcons.cs" />
     <ObjcBindingApiDefinition Include="MaterialBottomAppBar.cs" />
+    <ObjcBindingApiDefinition Include="MaterialBottomNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
@@ -89,6 +90,10 @@
       <SmartLink>False</SmartLink>
     </NativeReference>
     <NativeReference Include="..\..\references\MaterialComponents.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\..\references\MDFInternationalization.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

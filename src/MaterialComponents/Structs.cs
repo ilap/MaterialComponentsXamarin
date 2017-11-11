@@ -37,6 +37,31 @@ namespace MotionTransitioning
 
 namespace MaterialComponents
 {
+    
+    [Native]
+    public enum MDCBottomNavigationBarTitleVisibility : ulong
+    {
+        Selected = 0,
+        Always = 1,
+        Never = 2
+    }
+
+    [Native]
+    public enum MDCBottomNavigationBarAlignment : ulong
+    {
+        Justified = 0,
+        JustifiedAdjacentTitles = 1,
+        Centered = 2
+    }
+
+    [Native]
+    public enum MDCTextInputTextInsetsMode : ulong
+    {
+        Never = 0,
+        IfContent,
+        Always
+    }
+
 	[Native]
 	public enum MDCAnimationTimingFunction : ulong
 	{

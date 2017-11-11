@@ -18,6 +18,7 @@
 #import <UIKit/UIKit.h>
 
 #import "MaterialInk.h"
+#import "MaterialShadowElevations.h"
 
 /**
  A Material flat, raised or floating button.
@@ -70,6 +71,24 @@
  Default is UIEdgeInsetsZero.
  */
 @property(nonatomic) UIEdgeInsets hitAreaInsets;
+
+/**
+ The minimum size of the button’s alignment rect. If either the height or width are non-positive
+ (negative or zero), they will be ignored and that axis will adjust to its content size.
+
+ Defaults to CGSizeZero.
+ */
+@property(nonatomic, assign) CGSize minimumSize UI_APPEARANCE_SELECTOR;
+
+/**
+ The maximum size of the button’s alignment rect. If either the height or width are non-positive
+ (negative or zero), they will be ignored and that axis will adjust to its content size. Setting a
+ maximum size may result in image clipping or text truncation.
+
+ Defaults to CGSizeZero.
+ */
+@property(nonatomic, assign) CGSize maximumSize UI_APPEARANCE_SELECTOR;
+
 
 /**
  The apparent background color as seen by the user, i.e. the color of the view behind the button.
@@ -135,7 +154,7 @@
  @param state The control state to retrieve the elevation.
  @return The elevation for the requested state.
  */
-- (CGFloat)elevationForState:(UIControlState)state;
+- (MDCShadowElevation)elevationForState:(UIControlState)state;
 
 /**
  Sets the elevation for a particular control state.
@@ -143,7 +162,7 @@
  @param elevation The elevation to set.
  @param state The state to set.
  */
-- (void)setElevation:(CGFloat)elevation forState:(UIControlState)state;
+- (void)setElevation:(MDCShadowElevation)elevation forState:(UIControlState)state;
 
 /**
  A color used as the button's @c borderColor for @c state.

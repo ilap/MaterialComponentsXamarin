@@ -181,6 +181,11 @@ namespace MaterialComponents.MaterialInk
 		// -(void)cancelAllAnimationsAnimated:(BOOL)animated;
 		[Export("cancelAllAnimationsAnimated:")]
 		void CancelAllAnimationsAnimated(bool animated);
+
+        // +(MDCInkView * _Nonnull)injectedInkViewForView:(UIView * _Nonnull)view;
+        [Static]
+        [Export("injectedInkViewForView:")]
+        MDCInkView InjectedInkViewForView(UIView view);
 	}
 
 }

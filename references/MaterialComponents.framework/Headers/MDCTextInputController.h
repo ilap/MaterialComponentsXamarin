@@ -73,20 +73,6 @@
 @property(nonatomic, assign) UITextFieldViewMode characterCountViewMode;
 
 /**
- The corners to be rounded in the border area.
-
- Default is roundedCornersDefault.
- */
-@property(nonatomic, assign) UIRectCorner roundedCorners;
-
-/**
- Default for roundedCorners.
-
- Default is top right and top left.
- */
-@property(class, nonatomic, assign) UIRectCorner roundedCornersDefault;
-
-/**
  Color for decorations that indicates the input is not enabled / not accepting touch.
 
  Default is disabledColorDefault.
@@ -145,6 +131,34 @@
 @property(class, nonatomic, null_resettable, strong) UIColor *inlinePlaceholderColorDefault;
 
 /**
+ The font applied to the placeholder when inline (not floating).
+
+ Default is inlinePlaceholderFontDefault;
+ */
+@property(nonatomic, null_resettable, strong) UIFont *inlinePlaceholderFont;
+
+/**
+ Default value for inlinePlaceholderFont.
+
+ Default is MDCFontTextStyleBody1.
+ */
+@property(class, nonatomic, null_resettable, strong) UIFont *inlinePlaceholderFontDefault;
+
+/**
+ The font applied to the leading side underline label.
+
+ Default is leadingUnderlineLabelFontDefault;
+ */
+@property(nonatomic, null_resettable, strong) UIFont *leadingUnderlineLabelFont;
+
+/**
+ Default value for leadingUnderlineLabelFont.
+
+ Default is MDCFontTextStyleCaption.
+ */
+@property(class, nonatomic, null_resettable, strong) UIFont *leadingUnderlineLabelFontDefault;
+
+/**
  The color applied to the leading side underline label when not in error state.
 
  Default is leadingUnderlineLabelTextColorDefault;
@@ -192,9 +206,39 @@
  */
 @property(class, nonatomic, null_resettable, strong) UIColor *normalColorDefault;
 
+/** The text displayed in the placeholder label.*/
+@property(nonatomic, nullable, copy) NSString *placeholderText;
+
+/**
+ The corners to be rounded in the border area.
+
+ Default is roundedCornersDefault.
+ */
+@property(nonatomic, assign) UIRectCorner roundedCorners;
+
+/**
+ Default for roundedCorners.
+
+ Default is top right and top left.
+ */
+@property(class, nonatomic, assign) UIRectCorner roundedCornersDefault;
+
 /** The text input the controller is affecting. */
 @property(nonatomic, nullable, strong) UIView<MDCTextInput> *textInput;
 
+/**
+ The font applied to the trailing side underline label.
+
+ Default is trailingUnderlineLabelFontDefault;
+ */
+@property(nonatomic, null_resettable, strong) UIFont *trailingUnderlineLabelFont;
+
+/**
+ Default value for trailingUnderlineLabelFont.
+
+ Default is MDCFontTextStyleCaption.
+ */
+@property(class, nonatomic, null_resettable, strong) UIFont *trailingUnderlineLabelFontDefault;
 /**
  The color applied to the trailing side underline label when not in error state.
 

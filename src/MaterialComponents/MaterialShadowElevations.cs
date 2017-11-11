@@ -30,91 +30,91 @@ namespace MaterialComponents.ShadowElevation
     //[Verify(ConstantsInterfaceAssociation)]
     partial interface Elevation
     {
-        // extern const CGFloat MDCShadowElevationAppBar;
+        // extern const MDCShadowElevation MDCShadowElevationAppBar;
         [Field("MDCShadowElevationAppBar", "__Internal")]
         nfloat MDCShadowElevationAppBar { get; }
 
-        // extern const CGFloat MDCShadowElevationCardPickedUp;
+        // extern const MDCShadowElevation MDCShadowElevationCardPickedUp;
         [Field("MDCShadowElevationCardPickedUp", "__Internal")]
         nfloat MDCShadowElevationCardPickedUp { get; }
 
-        // extern const CGFloat MDCShadowElevationCardResting;
+        // extern const MDCShadowElevation MDCShadowElevationCardResting;
         [Field("MDCShadowElevationCardResting", "__Internal")]
         nfloat MDCShadowElevationCardResting { get; }
 
-        // extern const CGFloat MDCShadowElevationDialog;
+        // extern const MDCShadowElevation MDCShadowElevationDialog;
         [Field("MDCShadowElevationDialog", "__Internal")]
         nfloat MDCShadowElevationDialog { get; }
 
-        // extern const CGFloat MDCShadowElevationFABPressed;
+        // extern const MDCShadowElevation MDCShadowElevationFABPressed;
         [Field("MDCShadowElevationFABPressed", "__Internal")]
         nfloat MDCShadowElevationFABPressed { get; }
 
-        // extern const CGFloat MDCShadowElevationFABResting;
+        // extern const MDCShadowElevation MDCShadowElevationFABResting;
         [Field("MDCShadowElevationFABResting", "__Internal")]
         nfloat MDCShadowElevationFABResting { get; }
 
-        // extern const CGFloat MDCShadowElevationMenu;
+        // extern const MDCShadowElevation MDCShadowElevationMenu;
         [Field("MDCShadowElevationMenu", "__Internal")]
         nfloat MDCShadowElevationMenu { get; }
 
-        // extern const CGFloat MDCShadowElevationModalBottomSheet;
+        // extern const MDCShadowElevation MDCShadowElevationModalBottomSheet;
         [Field("MDCShadowElevationModalBottomSheet", "__Internal")]
         nfloat MDCShadowElevationModalBottomSheet { get; }
 
-        // extern const CGFloat MDCShadowElevationNavDrawer;
+        // extern const MDCShadowElevation MDCShadowElevationNavDrawer;
         [Field("MDCShadowElevationNavDrawer", "__Internal")]
         nfloat MDCShadowElevationNavDrawer { get; }
 
-        // extern const CGFloat MDCShadowElevationNone;
+        // extern const MDCShadowElevation MDCShadowElevationNone;
         [Field("MDCShadowElevationNone", "__Internal")]
         nfloat MDCShadowElevationNone { get; }
 
-        // extern const CGFloat MDCShadowElevationPicker;
+        // extern const MDCShadowElevation MDCShadowElevationPicker;
         [Field("MDCShadowElevationPicker", "__Internal")]
         nfloat MDCShadowElevationPicker { get; }
 
-        // extern const CGFloat MDCShadowElevationQuickEntry;
+        // extern const MDCShadowElevation MDCShadowElevationQuickEntry;
         [Field("MDCShadowElevationQuickEntry", "__Internal")]
         nfloat MDCShadowElevationQuickEntry { get; }
 
-        // extern const CGFloat MDCShadowElevationQuickEntryResting;
+        // extern const MDCShadowElevation MDCShadowElevationQuickEntryResting;
         [Field("MDCShadowElevationQuickEntryResting", "__Internal")]
         nfloat MDCShadowElevationQuickEntryResting { get; }
 
-        // extern const CGFloat MDCShadowElevationRaisedButtonPressed;
+        // extern const MDCShadowElevation MDCShadowElevationRaisedButtonPressed;
         [Field("MDCShadowElevationRaisedButtonPressed", "__Internal")]
         nfloat MDCShadowElevationRaisedButtonPressed { get; }
 
-        // extern const CGFloat MDCShadowElevationRaisedButtonResting;
+        // extern const MDCShadowElevation MDCShadowElevationRaisedButtonResting;
         [Field("MDCShadowElevationRaisedButtonResting", "__Internal")]
         nfloat MDCShadowElevationRaisedButtonResting { get; }
 
-        // extern const CGFloat MDCShadowElevationRefresh;
+        // extern const MDCShadowElevation MDCShadowElevationRefresh;
         [Field("MDCShadowElevationRefresh", "__Internal")]
         nfloat MDCShadowElevationRefresh { get; }
 
-        // extern const CGFloat MDCShadowElevationRightDrawer;
+        // extern const MDCShadowElevation MDCShadowElevationRightDrawer;
         [Field("MDCShadowElevationRightDrawer", "__Internal")]
         nfloat MDCShadowElevationRightDrawer { get; }
 
-        // extern const CGFloat MDCShadowElevationSearchBarResting;
+        // extern const MDCShadowElevation MDCShadowElevationSearchBarResting;
         [Field("MDCShadowElevationSearchBarResting", "__Internal")]
         nfloat MDCShadowElevationSearchBarResting { get; }
 
-        // extern const CGFloat MDCShadowElevationSearchBarScrolled;
+        // extern const MDCShadowElevation MDCShadowElevationSearchBarScrolled;
         [Field("MDCShadowElevationSearchBarScrolled", "__Internal")]
         nfloat MDCShadowElevationSearchBarScrolled { get; }
 
-        // extern const CGFloat MDCShadowElevationSnackbar;
+        // extern const MDCShadowElevation MDCShadowElevationSnackbar;
         [Field("MDCShadowElevationSnackbar", "__Internal")]
         nfloat MDCShadowElevationSnackbar { get; }
 
-        // extern const CGFloat MDCShadowElevationSubMenu;
+        // extern const MDCShadowElevation MDCShadowElevationSubMenu;
         [Field("MDCShadowElevationSubMenu", "__Internal")]
         nfloat MDCShadowElevationSubMenu { get; }
 
-        // extern const CGFloat MDCShadowElevationSwitch;
+        // extern const MDCShadowElevation MDCShadowElevationSwitch;
         [Field("MDCShadowElevationSwitch", "__Internal")]
         nfloat MDCShadowElevationSwitch { get; }
     }
