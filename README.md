@@ -1,3 +1,5 @@
+# &#9888; Notice: the development of the package is discontinued and has been taken over by [Microsoft (Xamarin)](https://github.com/xamarin/XamarinComponents/tree/master/iOS/MaterialComponents). The nuget badge refers to the [latest package released by Microsoft/Xamarin](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents/).
+
 <link href='//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
 
 <h1 align="center">
@@ -8,7 +10,7 @@
   <br>
 </h1>
 
-[![Build Status](https://www.bitrise.io/app/90b72d60b57288b7/status.svg?token=EMYZt7i6cIt8J8-uNQRmkA&branch=master)](https://www.bitrise.io/app/90b72d60b57288b7) [![GitHub release](https://img.shields.io/github/release/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/releases) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.iOS.MaterialComponents)](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents/) [![license](https://img.shields.io/github/license/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/blob/master/LICENSE) [![Github Releases (by Release)](https://img.shields.io/github/downloads/MaterialComponentsXamarin/MaterialComponentsXamarin/v35.0.0/total.svg)]() [![GitHub Issues](https://img.shields.io/github/issues/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/issues) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/ilap/MaterialComponentsXamarin#contribute)
+[![GitHub release](https://img.shields.io/github/release/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/releases) [![NuGet Badge](https://buildstats.info/nuget/Xamarin.iOS.MaterialComponents)](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents/) [![license](https://img.shields.io/github/license/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/blob/master/LICENSE) [![Github Releases (by Release)](https://img.shields.io/github/downloads/MaterialComponentsXamarin/MaterialComponentsXamarin/v35.0.0/total.svg)]() [![GitHub Issues](https://img.shields.io/github/issues/ilap/MaterialComponentsXamarin.svg)](https://github.com/ilap/MaterialComponentsXamarin/issues) [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/ilap/MaterialComponentsXamarin#contribute)
 
 <table>
 <tr>
